@@ -1,0 +1,19 @@
+.blog-wrapper
+  .blog-item
+
+    %h2.blog-heading= @post.title
+
+    .blog-share
+      %a{:href => "#"}
+        %img{:class => "icon-hover", :src => "/images/icons/twitter-large.png", :alt => "twitter", :width => "30"}
+
+    -# %img{:class => "blog-img", :src => "/images/gallery/blog-thumbs/1.jpg"}
+    %ul.post-details
+      %li.time-posted 4th August 2011
+      %li.use-posted= @post.author
+      %li.tag-posted= @post.tags
+      %li.com-posted 12 Comments
+      %li.mor-posted
+        %a{:href => "blog.html"} Back To Posts
+
+    ~ markdown(@post.content)

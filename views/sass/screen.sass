@@ -1,0 +1,54 @@
+
+
+$blueprint_grid_columns: 28
+$blueprint_grid_width: 30px
+$blueprint_grid_margin: 10px
+
+$lucida:    "lucida grande", "lucida sans unicode", "lucida sans", lucida, sans-serif
+$monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace
+
+@import compass/reset
+@import compass/css3/border-radius
+@import compass/css3/box-shadow
+@import compass/typography/vertical_rhythm
+@import compass/utilities/color/contrast
+
+@import compass/css3/images
+@import blueprint
+@import blueprint/typography
+
+$blueprint-font-family: Arial, Helvetica, sans-serif
+$blueprint-fixed-font-family: $monaco
+$blueprint-font-size: 12px
+
+$contrasted-dark-default:  #333
+$contrasted-light-default: #e7e7e7
+
+// +establish-baseline(16px)
+
+body
+  font-family: Arial, Helvetica, sans-serif
+  background-image: url('/images/background/pattern/pat5.png')
+  background-repeat: repeat
+
+  .blog-item
+    +blueprint-typography(true)
+
+    .highlight
+      +border-radius(5px)
+      background-image: url('/images/background/pattern/pat1.png')
+      background-repeat: repeat
+      margin-bottom: 1.5em
+
+      pre
+        +border-radius(5px)
+        +box-shadow(rgba(#000, .3) 0 0 5px 1px inset)
+        margin: 0
+        padding-left: 10px
+        padding-right: 10px
+        padding-top: 5px
+        padding-bottom: 5px
+        font-family: $monaco
+        overflow-x: auto
+
+

@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+		
+/* image replacement */
+.graphic, #prevBtn, #nextBtn{
+	margin:0;
+	padding:0;
+	display:block;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+
+#container{	
+	margin:0 auto;
+	position:relative;
+	text-align:left;
+	width:696px;
+	background:#fff;		
+	margin-bottom:2em;
+}	
+
+#header{
+	height:144px;
+	background:#5DC9E1;
+	color:#fff;
+}				
+	
+#content{
+	position:relative;
+}			
+
+
+#blog-slider{
+	margin-bottom:30px;		
+}	
+
+#blog-slider ul, #blog-slider li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#blog-slider li{ 
+	width:880px;
+	height:150px;
+	overflow:hidden; 
+}	
+
+.latest{
+	position:absolute;
+	margin-left:-4px;
+	margin-top:-4px;
+	background-image:url(../images/latest.png);
+	background-repeat:no-repeat;
+	width:111px;
+	height:111px;
+}
+
+#nextBtn{ 
+	position:absolute;
+	margin-top:-90px;
+	margin-left:830px;
+}	
+	
+#prevBtn{
+	position:absolute;
+	margin-top:-90px;
+	margin-left: 0px;
+
+}
+														
+#prevBtn a{  
+	display:block;
+	width:50px;
+	height:77px;
+	background:url(../images/arrows.png);
+	background-repeat:no-repeat;
+	background-position:left;
+}	
+
+#nextBtn a{ 
+	display:block;
+	width:50px;
+	height:77px;
+	background:url(../images/arrows.png);	
+	background-repeat:no-repeat;
+	background-position:right;
+}												
+
+
+
+
+
