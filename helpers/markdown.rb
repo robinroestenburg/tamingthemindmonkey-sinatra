@@ -14,6 +14,8 @@ module Sinatra
       options  = { :autolink => true, :space_after_headers => true, :fenced_code_blocks => true }
       markdown = Redcarpet::Markdown.new(HTMLwithPygments, options)
       markdown.render(text)
+    rescue
+      'Error occurred during Markdown rendering.'
     end
   end
 
