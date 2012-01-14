@@ -34,21 +34,46 @@ body
   .blog-item
     +blueprint-typography(true)
 
-    .highlight
-      +border-radius(5px)
-      background-image: url('/images/background/pattern/pat1.png')
-      background-repeat: repeat
-      margin-bottom: 1.5em
+    ul.post-details
+      li
+        background-repeat: no-repeat
+        background-position: 0px 4px
+        float: left
+        padding-left: 20px
+        padding-right: 15px
 
-      pre
+        &.tag-posted
+          background-image: url('/images/blog-lists/tags.png')
+
+        &.time-posted
+          background-image: url('/images/blog-lists/clock.png')
+
+        &.use-posted
+          background-image: url('/images/blog-lists/user.png')
+
+        &.com-posted
+          background-image: url('/images/blog-lists/comments.png')
+
+        &.more-posted
+          background-image: url('/images/blog-lists/more.png')
+
+    .blog-content
+
+      .highlight
         +border-radius(5px)
-        +box-shadow(rgba(#000, .3) 0 0 5px 1px inset)
-        margin: 0
-        padding-left: 10px
-        padding-right: 10px
-        padding-top: 5px
-        padding-bottom: 5px
-        font-family: $monaco
-        overflow-x: auto
+        background-image: url('/images/background/pattern/pat1.png')
+        background-repeat: repeat
+        margin-bottom: 1.5em
+
+        pre
+          +border-radius(5px)
+          +box-shadow(rgba(#000, .3) 0 0 5px 1px inset)
+          margin: 0
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 5px
+          padding-bottom: 5px
+          font-family: $monaco
+          overflow-x: auto
 
 

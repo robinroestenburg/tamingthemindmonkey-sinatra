@@ -266,8 +266,36 @@ body .blog-item .quiet {
 body .blog-item .loud {
   color: #111111;
 }
-/* line 37, ../../views/sass/screen.sass */
-body .blog-item .highlight {
+/* line 38, ../../views/sass/screen.sass */
+body .blog-item ul.post-details li {
+  background-repeat: no-repeat;
+  background-position: 0px 4px;
+  float: left;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+/* line 45, ../../views/sass/screen.sass */
+body .blog-item ul.post-details li.tag-posted {
+  background-image: url("/images/blog-lists/tags.png");
+}
+/* line 48, ../../views/sass/screen.sass */
+body .blog-item ul.post-details li.time-posted {
+  background-image: url("/images/blog-lists/clock.png");
+}
+/* line 51, ../../views/sass/screen.sass */
+body .blog-item ul.post-details li.use-posted {
+  background-image: url("/images/blog-lists/user.png");
+}
+/* line 54, ../../views/sass/screen.sass */
+body .blog-item ul.post-details li.com-posted {
+  background-image: url("/images/blog-lists/comments.png");
+}
+/* line 57, ../../views/sass/screen.sass */
+body .blog-item ul.post-details li.more-posted {
+  background-image: url("/images/blog-lists/more.png");
+}
+/* line 62, ../../views/sass/screen.sass */
+body .blog-item .blog-content .highlight {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -278,8 +306,8 @@ body .blog-item .highlight {
   background-repeat: repeat;
   margin-bottom: 1.5em;
 }
-/* line 43, ../../views/sass/screen.sass */
-body .blog-item .highlight pre {
+/* line 68, ../../views/sass/screen.sass */
+body .blog-item .blog-content .highlight pre {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;

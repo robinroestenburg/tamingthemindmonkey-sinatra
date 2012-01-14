@@ -840,55 +840,6 @@ ul.post-details{
   filter:alpha(opacity=70);
 }
 
-li.time-posted{
-  background-image:url(../images/blog-lists/clock.png);
-  background-repeat:no-repeat;
-  background-position:0px 4px;
-  float:left;
-  padding-left:20px;
-  padding-right:15px;
-
-}
-
-li.tag-posted{
-  background-image:url(../images/blog-lists/tags.png);
-  background-repeat:no-repeat;
-  background-position:0px 4px;
-  float:left;
-  padding-left:20px;
-  padding-right:15px;
-}
-
-li.use-posted{
-  background-image:url(../images/blog-lists/user.png);
-  background-repeat:no-repeat;
-  background-position:0px 4px;
-  float:left;
-  padding-left:20px;
-  padding-right:15px;
-}
-
-li.com-posted{
-  background-image:url(../images/blog-lists/comments.png);
-  background-repeat:no-repeat;
-  background-position:0px 4px;
-  float:left;
-  padding-left:20px;
-  padding-right:15px;
-}
-
-li.mor-posted{
-  background-image:url(../images/blog-lists/more.png);
-  background-repeat:no-repeat;
-  background-position:0px 4px;
-  float:left;
-  padding-left:20px;
-  padding-right:15px;
-}
-
-li.mor-posted a{
-
-}
 
 .post-buttons{
   margin-top:50px;
