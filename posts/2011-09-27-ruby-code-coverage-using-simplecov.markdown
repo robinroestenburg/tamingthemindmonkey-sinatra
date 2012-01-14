@@ -29,19 +29,21 @@ Gonna do this tomorrow and make sure I get the coverage to where it is supposed 
 If you want to merge the coverage statistics of multiple test suites, like RSPec and Cucumber, then you can put the configuration into a file called `.simplecov`. Otherwise, you'd have to duplicate the configuration into the different test suite helpers.
 
 The following line is all that remains of the SimpleCov configuration in the test setup helper of RSpec:
-{% highlight ruby %}
-    # spec/spec_helper.rb
-    require 'simplecov'
-{% endhighlight %}
+
+~~~ ruby
+# spec/spec_helper.rb
+require 'simplecov'
+~~~
 
 ### Filters
 It is possible to filter files, directories. Filters can be as simple as filtering all files in the `/test/` directory:
-{% highlight ruby %}
-    # .simplecov
-    SimpleCov.start do
-      add_filter "/test/"
-    end
-{% endhighlight %}
+
+~~~ ruby
+# .simplecov
+SimpleCov.start do
+  add_filter "/test/"
+end
+~~~
 
 Or, you could write your own filter class and get creative :-) For an example of a  filter class, see the next code sample.
 
@@ -49,28 +51,30 @@ Or, you could write your own filter class and get creative :-) For an example of
 You can specify custom groups to be shown as a tab on the page containing coverage results.
 
 For example, you want your models to show up in a separate tab. You would have to add these lines to the SimpleCov configuration:
-{% highlight ruby %}
-    # .simplecov
-    SimpleCov.start do
-      add_group "Models", "app/models"
-    end
-{% endhighlight %}
+
+~~~ ruby
+# .simplecov
+SimpleCov.start do
+  add_group "Models", "app/models"
+end
+~~~
 
 The SimpleCov gem comes with a default setting for Rails applications. You can use this by passing `'rails'` as an argument to the `SimpleCov.start` command in your test framework's helper file (as I've done in the code sample below). This will create groups for your models, controllers, libraries, etc. You can see the result in one of the screenshots above.
 
 Also, it is possible to define groups based on specific filters. Take a look at the following example:
-{% highlight ruby %}
-    # .simplecov
-    class LineFilter &lt; SimpleCov::Filter
-      def passes?(source_file)
-        source_file.lines.count &gt; filter_argument
-      end
-    end
 
-    SimpleCov.start 'rails' do
-      add_group "Short files", LineFilter.new(5)
-    end
-{% endhighlight %}
+~~~ ruby
+# .simplecov
+class LineFilter < SimpleCov::Filter
+  def passes?(source_file)
+    source_file.lines.count > filter_argument
+  end
+end
+
+SimpleCov.start 'rails' do
+  add_group "Short files", LineFilter.new(5)
+end
+~~~
 
 For my application this generates the following 'Short files' tab containing only the files which have 5 lines or less:
 
@@ -82,11 +86,12 @@ One odd thing about this is that a file is added to the group when the filter do
 The documentation states that: *'Group definition works similar to Filters (and indeed also accepts custom filter classes), but source files end up in a group when the filter passes (returns true), as opposed to filtering results, which exclude files from results when the filter results in a true value.'*. The code does not work this way right now. In fact, the example given in the documentation does not work because of this as well.
 
 The method `grouped()` from [simplecov.rb](https://github.com/colszowka/simplecov/blob/master/lib/simplecov.rb) contains the code responsible for this odd behavior:
-{% highlight ruby %}
-    grouped[name] =
-      SimpleCov::FileList.new(
-        files.select {|source_file| !filter.passes?(source_file)})
-{% endhighlight %}
+
+~~~ ruby
+grouped[name] =
+  SimpleCov::FileList.new(
+    files.select {|source_file| !filter.passes?(source_file)})
+~~~
 
 The negation should be left out, will add a issue for this tomorrow.
 

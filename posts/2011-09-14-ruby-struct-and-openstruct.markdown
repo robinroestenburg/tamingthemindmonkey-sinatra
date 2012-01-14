@@ -21,24 +21,25 @@ I don't need point 2 and good unit tests make point 4 obsolete. I just need some
 ### Creating a Struct
 There are two ways to create a new Struct. You can create a explicitly named struct class like so:
 
-{% highlight ruby %}
+~~~ ruby
 # Create a structure with a name in Struct
 Struct.new("Mana", :identifier, :name)    #=> Struct::Mana
 Struct::Mana.new("R", "Red")              #=> #<struct Struct::Mana identifier="R", name="Red">
-{% endhighlight %}
+~~~
 
 Defining a name for the struct (like 'Mana' above) will create a constant for that name inside class **Struct**. This is probably not a good idea, because it can lead to potential conflicts.
 
 You can also create an anonymous struct class:
 
-{% highlight ruby %}
+~~~ ruby
 # Create a structure named by its constant
 Mana = Struct.new(:identifier, :name)     #=> Mana
 Mana.new("R", "Red")                      #=> #<struct Mana identifier="R", name="Red">
-{% endhighlight %}
+~~~
 
 This leads to some naming issues as well though. It would be confusing to have ActiveRecord Card classes available and also Card structs. Hmm, I do not even know if that will even work.
-{% highlight text %}
+
+~~~ text
 irb :001 > card = Card.new
 => #<Card id: nil, ... >
 
@@ -48,7 +49,7 @@ irb :002 > Card = Struct.new("Card", :name)
 
 irb :003 > struct = Card.new
 => #<struct Struct::Card name=nil>
-{% endhighlight %}
+~~~
 
 Guess not ;) Ruby gives a warning that you are overwriting the Card constant.
 
@@ -57,7 +58,7 @@ I'll name the struct classes like a normal variable for now (e.g. lowercase 'man
 ### Changes to the code (1)
 Changing the references to the model class turned out to be very easy :) For example, check out the the following code:
 
-{% highlight ruby %}
+~~~ ruby
 def create_card_mana(code, index)
   card_mana = CardMana.new
   card_mana.mana_order = index
@@ -65,39 +66,44 @@ def create_card_mana(code, index)
 
   card_mana
 end
-{% endhighlight %}
+~~~
 
 After changing the model class references to structs, the code looks like this:
-{% highlight ruby %}
+
+~~~ ruby
 def create_card_mana(code, index)
   card_mana = Struct.new(:order, :mana)
   card_mana.new(index, code)
 end
-{% endhighlight %}
+~~~
 
 Having my doubts about the performance penalty for defining a new struct every time. If I define the structs as constants of my class it should be alright.
-{% highlight ruby %}
+
+~~~ ruby
 CardManaStruct = Struct.new(:order, :mana)
 
 def create_card_mana(code, index)
   CardManaStruct.new(index, code)
 end
-{% endhighlight %}
+~~~
+
 Also, I went with the alternative naming of the struct class to show it is a constant.
 
 ### Changes to the code (2)
 Another example:
-{% highlight ruby %}
+
+~~~ ruby
 def get_card_details
   card            = Card.new
   card.identifier = @identifier
   card.name       = name_on_page
   ...
 end
-{% endhighlight %}
+~~~
 
 This code got changed into:
-{% highlight ruby %}
+
+~~~ ruby
 def get_card_details
   card_struct     = Struct.new(:identifier,
                                :name,
@@ -116,10 +122,11 @@ def get_card_details
    card.name       = name_on_page
    ...
 end
-{% endhighlight %}
+~~~
 
 Hmm, this is a bit ugly. Moving the creation of the struct to a class constant will make this somewhat better ():
-{% highlight ruby %}
+
+~~~ ruby
 CardStruct = Struct.new(:name,
                         ...
 
@@ -129,7 +136,7 @@ def get_card_details
   card.name       = name_on_page
   ...
 end
-{% endhighlight %}
+~~~
 
 ### OpenStruct
 In the end I could've just defined a separate class for the **CardStruct** instead of the struct class constants I ended up with now). I'm going to go with the **OpenStruct** instead.
@@ -137,7 +144,8 @@ In the end I could've just defined a separate class for the **CardStruct** inste
 Using **OpenStruct** I do not need to explicitly define the attributes that are present on the struct class. This makes the code less readable, but I guess it is still ok.
 
 The above two examples turn out like this when using the **OpenStruct**:
-{% highlight ruby %}
+
+~~~ ruby
 def get_card_details
   card = OpenStruct.new
   card.identifier = @identifier
@@ -149,7 +157,7 @@ def create_card_mana(code, index)
   OpenStruct.new({ :order =&gt; index,
                    :identifier =&gt; code})
 end
-{% endhighlight %}
+~~~
 
 These two methods show the two ways to define an OpenStruct. When you provide a hash it will automatically generate attributes and values.
 

@@ -1,6 +1,7 @@
 ---
 
 layout: post
+title: Bla
 published: false
 tags: rspec rails
 
