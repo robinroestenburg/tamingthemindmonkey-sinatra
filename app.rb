@@ -3,6 +3,7 @@ require 'bundler/setup'
 require 'redcarpet'
 require 'preamble'
 require 'pygments'
+require 'haml'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
