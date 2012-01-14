@@ -1,21 +1,32 @@
 class TamingTheMindMonkey < Sinatra::Application
 
   get '/*/*/*/*' do |year, month, day, title|
-    # begin
+    begin
       file_name = "posts/#{year}-#{month}-#{day}-#{title}.markdown"
 
       @post = Post.find_by_name(file_name)
       haml :post
-    # rescue
-    #   pass # Show the month overview.
-    # end
+
+    rescue
+      pass # Show the month overview.
+    end
   end
 
   get %r{/([\d]+)/([\d]+)} do |year, month|
-    "Month overview not implemented yet."
+    begin
+      @year   = year
+      @month  = month
+      @posts  = Post.find_by_month(@year, @month)
+      haml :month
+    rescue
+      pass # Show the year overview.
+    end
   end
 
   get %r{/([\d]+)} do |year|
-    "Year overview not implemented yet."
+    @year   = year
+    @posts  = Post.find_by_year(@year)
+    haml :year
   end
+
 end

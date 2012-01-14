@@ -33,15 +33,24 @@ class Post
   end
 
   def self.find_most_recent
-    all_posts_on_disk.
-      collect { |file_name| Post.build("posts/#{file_name}") }.
-      reverse[0..10]
+    all_posts[0..10]
+  end
+
+  def self.find_by_year(year)
+    all_posts.select { |post| post.filename.start_with? "posts/#{year}" }
+  end
+
+  def self.find_by_month(year, month)
+    all_posts.select { |post| post.filename.start_with? "posts/#{year}-#{month}" }
   end
 
   private
 
-  def self.all_posts_on_disk
-    Dir.new('posts').select { |file_name| file_name != '.' &&  file_name != '..' }
+  def self.all_posts
+    Dir.new('posts').
+      select { |file_name| file_name != '.' &&  file_name != '..' }.
+      collect { |file_name| Post.build("posts/#{file_name}") }.
+      reverse
   end
 
   def self.parse_file(file_name)

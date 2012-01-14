@@ -1,0 +1,12 @@
+%h3.headline= @year
+
+- if @posts.any?
+  %ul.bullet-list
+    - @posts.each do |post|
+      %li
+        %span.title
+          %a{:href => "#{post.permalink}"}= post.title
+        %span.posted_at
+          = post.published_at
+        %span.tags
+          = post.tags
