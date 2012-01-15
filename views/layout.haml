@@ -6,13 +6,7 @@
 
     %link{:rel => "stylesheet", :href => "/css/style.css" }
     %link{:rel => "stylesheet", :href => "/css/screen.css"}
-    -# %link{:rel => "stylesheet", :href => "/css/_pygments_friendly.css"}
-    -# %link{:rel => "stylesheet", :href => "/css/_pygments_monokai.css"}
-    -# %link{:rel => "stylesheet", :href => "/css/_pygments_native.css"}
-    -# %link{:rel => "stylesheet", :href => "/css/_pygments_perldoc.css"}
-    -# %link{:rel => "stylesheet", :href => "/css/_pygments_pink.css"}
     %link{:rel => "stylesheet", :href => "/css/_pygments_github.css"}
-    -# %link{:rel => "stylesheet", :href => "/css/_pygments_irblack.css"}
     %link{:rel => "stylesheet", :href => "/css/buttons.css"}
     %link{:rel => "stylesheet", :href => "/css/elements.css"}
     %link{:rel => "stylesheet", :href => "/css/about-slider.css" }
@@ -56,4 +50,14 @@
         .decoration
 
         =yield
+
+        .decoration
+        .footer
+          %p.footer-text
+            &copy; Copyright 2011-2012. TamingTheMindMonkey.com
+            .footer-socials
+              %a{:title => "Twitter", :class => "tooltip", :href => "#"}
+                %img{:class => "footer-image", :src => "/images/icons/twitter-large.png", :width => "22", :alt => "Twitter"}
+              %a{:title => "Back To Top", :class => "tooltip top", :href => "#"}
+                %img{:class => "footer-image", :src => "/images/icons/up.png", :width => "22", :alt => "Go Back Up!"}
 
