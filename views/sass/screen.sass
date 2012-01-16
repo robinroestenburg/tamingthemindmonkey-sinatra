@@ -17,6 +17,8 @@ $monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans m
 @import blueprint
 @import blueprint/typography
 
+@import _columns
+
 $blueprint-font-family: Arial, Helvetica, sans-serif
 $blueprint-fixed-font-family: $monaco
 $blueprint-font-size: 12px
@@ -28,11 +30,17 @@ $contrasted-light-default: #e7e7e7
 
 body
   font-family: Arial, Helvetica, sans-serif
+  font-size: 12px
   background-image: url('/images/background/pattern/pat5.png')
   background-repeat: repeat
 
+
+
+
+
   .blog-item
     +blueprint-typography(true)
+    font-size: 1em
 
     ul.post-details
       li

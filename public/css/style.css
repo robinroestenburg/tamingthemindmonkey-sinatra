@@ -355,50 +355,6 @@ img.home-thumb-over{
 /*----------------------------------------------------*/
 /*Column Creation*/
 /*----------------------------------------------------*/
-h2.column-heading{
-  font-size:18px;
-  color:#343434;
-  padding-bottom:20px;
-}
-
-img.column-image{
-  padding-top:3px;
-  padding-right:15px;
-  padding-bottom:5px;
-  float:left;
-}
-
-.columns{
-  width:950px;
-  padding-bottom:30px;
-}
-
-.colOne{
-  color:#6f6f6f;
-  line-height:22px;
-  margin-right:65px;
-  width:250px;
-  float:left;
-  padding-bottom:30px;
-}
-
-.colTwo{
-  color:#6f6f6f;
-  line-height:22px;
-  margin-right:65px;
-  width:250px;
-  float:left;
-  padding-bottom:30px;
-}
-
-.colThree{
-  color:#6f6f6f;
-  line-height:22px;
-  width:250px;
-  float:left;
-  padding-bottom:30px;
-}
-
 
 p, blockquote{
   font-size:12px;

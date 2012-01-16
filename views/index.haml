@@ -1,12 +1,22 @@
-%h3.headline Most recent posts
+.columns
+  .two-columns
+    .column
+      %h2.column-heading Most recent posts.
+      - if @posts.any?
+        %ul.bullet-list
+          - @posts.each do |post|
+            %li
+              %span.title
+                %a{:href => "#{post.permalink}"}= post.title
+              %span.posted_at
+                = post.published_at
+              %span.tags
+                = post.tags
 
-- if @posts.any?
-  %ul.bullet-list
-    - @posts.each do |post|
-      %li
-        %span.title
-          %a{:href => "#{post.permalink}"}= post.title
-        %span.posted_at
-          = post.published_at
-        %span.tags
-          = post.tags
+    .column.last
+      %h2.column-heading Most recent posts.
+      %img{:class => "column-image", :src => "images/icons/settings.png", :alt => "settings"}
+      %p
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+
