@@ -7,10 +7,27 @@ class Post
                 :tags,
                 :filename
 
-
   def permalink
     match_data = filename.match(/posts\/(\d+)-(\d+)-(\d+)-(.+)\.markdown/)
     "#{match_data[1]}/#{match_data[2]}/#{match_data[3]}/#{match_data[4]}"
+  end
+
+  def next_post
+    index = Post.all_posts.find_index(Post.build(filename))
+    Post.all_posts.to_a.fetch(index + 1)
+  rescue => error
+    puts "Generic error handler: #{error.inspect}"
+  end
+
+  def previous_post
+    index = Post.all_posts.find_index(Post.build(filename))
+    Post.all_posts.to_a.fetch(index - 1)
+  rescue => error
+    puts "Generic error handler: #{error.inspect}"
+  end
+
+  def ==(other)
+    self.filename == other.filename
   end
 
   def self.build(file_name)
@@ -44,14 +61,14 @@ class Post
     all_posts.select { |post| post.filename.start_with? "posts/#{year}-#{month}" }
   end
 
-  private
-
   def self.all_posts
     Dir.new('posts').
       select { |file_name| file_name != '.' &&  file_name != '..' }.
       collect { |file_name| Post.build("posts/#{file_name}") }.
       reverse
   end
+
+  private
 
   def self.parse_file(file_name)
     Preamble.load(file_name)

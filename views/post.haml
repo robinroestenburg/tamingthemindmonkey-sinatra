@@ -19,6 +19,13 @@
 
       ~ markdown(@post.content)
 
+    .next
+      NEXT
+      %a{:href => "/#{@post.next_post.permalink}"}= @post.next_post.title
+
+    .previous
+      PREVIOUS
+      %a{:href => "/#{@post.previous_post.permalink}"}= @post.previous_post.title
     .decoration
 
     #disqus_thread
