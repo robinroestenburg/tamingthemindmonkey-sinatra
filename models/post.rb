@@ -12,18 +12,28 @@ class Post
     "#{match_data[1]}/#{match_data[2]}/#{match_data[3]}/#{match_data[4]}"
   end
 
+  def has_next?
+    next_post
+  rescue IndexError => error
+    false
+  end
+
   def next_post
     index = Post.all_posts.find_index(Post.build(filename))
-    Post.all_posts.to_a.fetch(index + 1)
-  rescue => error
-    puts "Generic error handler: #{error.inspect}"
+
+    raise IndexError if (index - 1) < 0
+    Post.all_posts.to_a.fetch(index - 1)
+  end
+
+  def has_previous?
+    previous_post
+  rescue IndexError => error
+    false
   end
 
   def previous_post
     index = Post.all_posts.find_index(Post.build(filename))
-    Post.all_posts.to_a.fetch(index - 1)
-  rescue => error
-    puts "Generic error handler: #{error.inspect}"
+    Post.all_posts.to_a.fetch(index + 1)
   end
 
   def ==(other)

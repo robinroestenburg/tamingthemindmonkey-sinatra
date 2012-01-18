@@ -378,3 +378,36 @@ body .blog-item .blog-content .highlight pre {
   font-family: monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace;
   overflow-x: auto;
 }
+/* line 87, ../../views/sass/screen.sass */
+body .blog-item .navigation {
+  margin-bottom: 5px;
+}
+/* line 90, ../../views/sass/screen.sass */
+body .blog-item .navigation .decoration {
+  margin-bottom: 5px;
+}
+/* line 93, ../../views/sass/screen.sass */
+body .blog-item .navigation .previous {
+  width: 440px;
+  display: table-cell;
+}
+/* line 97, ../../views/sass/screen.sass */
+body .blog-item .navigation .previous img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+/* line 100, ../../views/sass/screen.sass */
+body .blog-item .navigation .next {
+  text-align: right;
+  width: 440px;
+  display: table-cell;
+}
+/* line 105, ../../views/sass/screen.sass */
+body .blog-item .navigation .next img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+/* line 108, ../../views/sass/screen.sass */
+body .blog-item .navigation h4 {
+  display: inline;
+}

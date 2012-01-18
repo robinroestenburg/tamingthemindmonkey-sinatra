@@ -19,13 +19,23 @@
 
       ~ markdown(@post.content)
 
-    .next
-      NEXT
-      %a{:href => "/#{@post.next_post.permalink}"}= @post.next_post.title
 
-    .previous
-      PREVIOUS
-      %a{:href => "/#{@post.previous_post.permalink}"}= @post.previous_post.title
+    .navigation
+      .decoration
+      - if @post.has_previous?
+        .previous
+          %a{:href => "/#{@post.previous_post.permalink}"}<
+            %img{:src => "/images/icons/left.png", :class => "icon-hover", :style => "opacity: 1;"}>
+            %span<
+              %h4= @post.previous_post.title
+
+      - if @post.has_next?
+        .next
+          %a{:href => "/#{@post.next_post.permalink}"}<
+            %span<
+              %h4= @post.next_post.title
+            %img{:src => "/images/icons/right.png", :class => "icon-hover", :style => "opacity: 1;"}>
+
     .decoration
 
     #disqus_thread
