@@ -7,6 +7,10 @@ class Post
                 :tags,
                 :filename
 
+  def initialize
+    @tags = []
+  end
+
   def permalink
     match_data = filename.match(/posts\/(\d+)-(\d+)-(\d+)-(.+)\.markdown/)
     "#{match_data[1]}/#{match_data[2]}/#{match_data[3]}/#{match_data[4]}"
@@ -14,26 +18,22 @@ class Post
 
   def has_next?
     next_post
-  rescue IndexError => error
-    false
   end
 
   def next_post
-    index = Post.all_posts.find_index(Post.build(filename))
-
-    raise IndexError if (index - 1) < 0
-    Post.all_posts.to_a.fetch(index - 1)
+    index = post_position
+    Post.all_posts.to_a.fetch(index - 1) unless last_post? index
   end
 
   def has_previous?
     previous_post
-  rescue IndexError => error
-    false
   end
 
   def previous_post
-    index = Post.all_posts.find_index(Post.build(filename))
+    index = post_position
     Post.all_posts.to_a.fetch(index + 1)
+  rescue IndexError
+    false
   end
 
   def ==(other)
@@ -49,7 +49,7 @@ class Post
     post.title        = preamble['title']
     post.author       = preamble['author']
     post.published_at = preamble['published_at']
-    post.tags         = preamble['tags']
+    post.tags         = Post.parse_tag_list(preamble['tags'])
     post
   end
 
@@ -78,10 +78,25 @@ class Post
       reverse
   end
 
+  def self.parse_tag_list(tags)
+    return [] unless tags.is_a? String
+    return [] if tags.empty?
+
+    tags.split.uniq
+  end
+
   private
 
   def self.parse_file(file_name)
     Preamble.load(file_name)
+  end
+
+  def post_position
+    Post.all_posts.find_index(Post.build(filename))
+  end
+
+  def last_post?(index)
+    (index - 1) < 0
   end
 
 end

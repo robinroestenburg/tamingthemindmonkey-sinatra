@@ -12,7 +12,13 @@
       %ul.post-details
         %li.time-posted= @post.published_at
         %li.use-posted= @post.author
-        %li.tag-posted= @post.tags
+        - if @post.tags
+          %li.tag-posted
+            - @post.tags.each_with_index do |tag, index|
+              - if @post.tags.length - 1 == index
+                ="#{tag}"
+              - else
+                ="#{tag}, "
         %li.com-posted 12 Comments
         %li.mor-posted
           %a{:href => "/"} Back To Posts
