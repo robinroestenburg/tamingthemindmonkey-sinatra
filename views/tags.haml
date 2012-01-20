@@ -1,0 +1,8 @@
+%h3.headline= "Tags"
+
+- if @tags.any?
+  %ul.bullet-list
+    - @tags.each do |tag|
+      %li
+        %span.name
+          %a{:href => "/tag/#{tag.name}"}= tag.name

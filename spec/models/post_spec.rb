@@ -1,4 +1,4 @@
-require 'models/post'
+require_relative '../../models/post'
 require 'preamble'
 
 describe Post do

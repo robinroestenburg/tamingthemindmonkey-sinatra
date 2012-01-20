@@ -1,18 +1,15 @@
-require 'models/tag'
-require 'models/post'
+require_relative '../../models/tag'
+require_relative '../../models/post'
 
 describe Tag do
 
   let(:foo) { double(:tags => ['Foo']) }
   let(:bar) { double(:tags => ['Bar']) }
 
-  it { should respond_to(:name) }
-
   it 'has a list of posts using this tag' do
     Post.stub(:all_posts).and_return([foo, bar])
 
-    subject.name = 'Foo'
-    subject.posts.should == [foo]
+    Tag.posts_for('Bar').should == [bar]
   end
 
   describe '#all' do
@@ -29,5 +26,4 @@ describe Tag do
       subject.should == ['Foo', 'Bar']
     end
   end
-
 end

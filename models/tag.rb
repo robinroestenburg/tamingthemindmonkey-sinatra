@@ -1,11 +1,6 @@
 class Tag
-  attr_accessor :name
 
-  def initialize
-    @name = 'Foo'
-  end
-
-  def posts
+  def self.posts_for(name)
     Post.all_posts.select { |post| post.tags.include? name }
   end
 
