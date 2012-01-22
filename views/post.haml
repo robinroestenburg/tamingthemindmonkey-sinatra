@@ -16,9 +16,9 @@
           %li.tag-posted
             - @post.tags.each_with_index do |tag, index|
               - if @post.tags.length - 1 == index
-                ="#{tag}"
+                %a{:href => "/tag/#{tag}"}= tag
               - else
-                ="#{tag}, "
+                %a{:href => "/tag/#{tag}"}= "#{tag}, "
         %li.com-posted 12 Comments
         %li.mor-posted
           %a{:href => "/"} Back To Posts
