@@ -170,7 +170,7 @@ li.tweet_content_0{
 
 #site-wrapper{
   display:block;
-  padding-top:60px;
+  padding-top:30px;
   padding-left:67px;
   padding-right:60px;
   padding-bottom:30px;
@@ -730,17 +730,6 @@ p.location-title{
 
 /*End Of Contact Form Styles*/
 
-
-/*----------------------------------------------------*/
-/*Footer Styles */
-/*----------------------------------------------------*/
-#footer{
-  padding-bottom:30px;
-}
-
-p.footer-text{
-  float:left;
-}
 
 
 /*----------------------------------------------------*/

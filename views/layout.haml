@@ -29,23 +29,7 @@
     #main-container
       #site-wrapper
         #header
-          .title
-            TamingTheMindMonkey.com
-            \»
-            %span.subtitle
-              blogging to get that monkey under control
-
-        .decoration
-        .headline
-          #slides
-            .slides_container
-              .slide
-                %h3.headline-heading
-                  %strong
-                    Welcome to TamingTheMindMonkey.com. A development blog by Robin Roestenburg!
-                    %a{:href => '#', :class => 'headline-button'} Read More
-              .slide
-                Bla
+          %h1= "TamingTheMindMonkey.com".upcase
 
         .decoration
 
@@ -53,7 +37,7 @@
 
         .clear
         .decoration
-        .footer
+        #footer
           %p.footer-text
             &copy; Copyright 2011-2012. TamingTheMindMonkey.com
             .footer-socials
