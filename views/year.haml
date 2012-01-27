@@ -2,7 +2,7 @@
 
 - if @months.any?
   - @months.each do |month|
-    %h5= month[0]
+    %h5= Date.new(@year, month[0]).strftime('%B')
     %ul.bullet-list
 
       - month[1].each do |post|

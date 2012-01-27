@@ -50,7 +50,7 @@ class Post
     post.content      = content
     post.title        = preamble['title']
     post.author       = preamble['author']
-    post.published_at = preamble['published_at']
+    post.published_at = Date.parse(preamble['published_at']) if preamble['published_at']
     post.tags         = Post.parse_tag_list(preamble['tags'])
     post
   end
@@ -67,13 +67,13 @@ class Post
 
   def self.find_by_year(year)
     all_posts.
-      select { |post| post.filename.start_with? "#{POSTS_DIR}/#{year}" }.
-      group_by { |post| post.filename[11..12] }
+      select { |post| post.published_at.year == year }.
+      group_by { |post| post.published_at.month }
 
   end
 
   def self.find_by_month(year, month)
-    all_posts.select { |post| post.filename.start_with? "#{POSTS_DIR}/#{year}-#{month}" }
+    all_posts.select { |post| post.published_at.year == year && post.published_at.month == month }
   end
 
   def self.all_posts

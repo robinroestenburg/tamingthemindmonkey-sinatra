@@ -1,4 +1,4 @@
-%h3.headline= "#{@year}-#{@month}"
+%h3.headline= @month.strftime('%B')
 
 - if @posts.any?
   %ul.bullet-list

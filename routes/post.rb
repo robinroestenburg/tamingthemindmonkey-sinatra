@@ -14,9 +14,11 @@ class TamingTheMindMonkey < Sinatra::Application
 
   get %r{/([\d]+)/([\d]+)} do |year, month|
     begin
-      @year   = year
-      @month  = month
-      @posts  = Post.find_by_month(@year, @month)
+      month   = month.to_i
+      year    = year.to_i
+
+      @month  = Date.new(year, month)
+      @posts  = Post.find_by_month(year, month)
       haml :month
     rescue
       pass # Show the year overview.
@@ -24,7 +26,7 @@ class TamingTheMindMonkey < Sinatra::Application
   end
 
   get %r{/([\d]+)} do |year|
-    @year   = year
+    @year   = year.to_i
     @months  = Post.find_by_year(@year)
     haml :year
   end

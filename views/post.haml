@@ -6,7 +6,7 @@
     -# %img{:class => "blog-img", :src => "/images/gallery/blog-thumbs/1.jpg"}
     .blog-content
       %ul.post-details
-        %li.time-posted= @post.published_at
+        %li.time-posted= @post.published_at.strftime('%B %d, %Y')
         %li.user-posted= @post.author
         - if @post.tags
           %li.tags-posted

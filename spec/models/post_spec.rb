@@ -25,6 +25,26 @@ describe Post do
     end
   end
 
+  describe '#build' do
+
+    before do
+      Post.stub(:parse_file).and_return([{ 'title' => 'Foo',
+                                           'author' => 'Quux',
+                                           'published_at' => '2011-01-01'
+                                         }, 'Baz'])
+    end
+
+    subject { Post.build('Bar') }
+
+    its(:filename)      { should == 'Bar' }
+    its(:content)       { should == 'Baz' }
+    its(:title)         { should == 'Foo' }
+    its(:author)        { should == 'Quux' }
+    its(:published_at)  { should == Date.new(2011, 1, 1) }
+
+
+  end
+
   describe '#find_by_year' do
 
     let(:foo) { double(:filename => 'posts/2011-01-01-Foo') }
@@ -32,7 +52,9 @@ describe Post do
 
     before do
       Dir.stub(:new).and_return(['.', '..', '2011-01-01-Foo', '2011-02-02-Bar', '2012-01-01-Baz'])
-      Post.stub(:parse_file).and_return(['Tags', 'Quux'])
+      Post.stub(:parse_file).with('posts/2011-01-01-Foo').and_return([{ 'published_at' => '2011-01-01' }, 'Quux'])
+      Post.stub(:parse_file).with('posts/2011-02-02-Bar').and_return([{ 'published_at' => '2011-02-02' }, 'Quux'])
+      Post.stub(:parse_file).with('posts/2012-01-01-Baz').and_return([{ 'published_at' => '2012-01-01' }, 'Quux'])
     end
 
     it 'returns a list of posts in a year partitioned by month' do
