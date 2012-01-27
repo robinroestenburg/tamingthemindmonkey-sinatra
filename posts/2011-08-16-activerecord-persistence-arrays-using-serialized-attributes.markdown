@@ -2,6 +2,8 @@
 layout: post
 title: "ActiveRecord: Persisting arrays using serialized attributes"
 tags: activerecord mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-16"
 ---
 Magic: The Gathering cards have rules and/or flavor text printed on them. While storing these lines into the model I came across a nice feature of Rails' ActiveRecord.
 

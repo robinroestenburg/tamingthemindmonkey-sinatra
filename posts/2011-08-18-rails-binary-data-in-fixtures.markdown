@@ -2,6 +2,8 @@
 layout: post
 title: "Rails: Binary data in fixtures"
 tags: fixtures mychain yaml
+author: Robin Roestenburg
+published_at: "2011-08-18"
 ---
 Yesterday I've implemented scraping the image of a card from the Gatherer repository. One of the test cases I've implemented was:
     #!ruby

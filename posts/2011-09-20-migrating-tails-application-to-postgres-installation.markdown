@@ -2,6 +2,8 @@
 layout: post
 title: "Migrating Rails application to Postgres: Installation"
 tags: mychain postgres
+author: "Robin Roestenburg"
+published_at: "2011-09-20"
 ---
 I've moved my Rails application from the default SQLite to a Postgres database.
 

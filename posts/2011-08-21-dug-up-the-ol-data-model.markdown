@@ -2,6 +2,8 @@
 layout: post
 title: "Dug up the ol' data model"
 tags: mychain
+author: Robin Roestenburg
+published_at: "2011-08-21"
 ---
 <p>In an <a href="http://www.tamingthemindmonkey.com/65090142">earlier post</a> I mentioned that I've started coding the Magic cards manager program a couple of times. For me, it is a good project to get some hands-on experience with a new language or a new technique. This time I'm using it to get more experience with the Ruby programming language and the Rails framework as well as the ecosystem that surrounds them. Apart from the experience, I do want to finish the program this time. I want to get feedback on the application/code and the only way to get feedback is to put <em>'stuff out there'</em> (which is one of the reasons for starting this blog as well).</p>
 <p>Back to the previous attempts. On my last attempt (summer of 2010) I've used Groovy and the Grails framework to code the program in. Before starting I spent a good amount of time creating the data model. The model that I came up with back then looked like this (<em>finally an excuse to play around with OmniGraffle!</em>):</p>

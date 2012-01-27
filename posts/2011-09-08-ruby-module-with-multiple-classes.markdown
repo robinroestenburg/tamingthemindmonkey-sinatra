@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Module with multiple classes"
 tags: mychain ruby
+author: Robin Roestenburg
+published_at: "2011-09-08"
 ---
 I'm still learning RSpec, so tonight a smaller post about how to create a module that is spread out over multiple files in Ruby.
 

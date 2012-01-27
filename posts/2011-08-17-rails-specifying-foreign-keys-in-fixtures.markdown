@@ -2,6 +2,8 @@
 layout: post
 title: "Rails: Specifying foreign keys in fixtures"
 tags: fixtures mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-17"
 ---
 Today I've added scraping the image of a particular *Magic: The Gathering* card into the database. For this I had to create the **CardImage** model, which was pretty straight forward. The **CardImage** model class looks like this:
     #!ruby

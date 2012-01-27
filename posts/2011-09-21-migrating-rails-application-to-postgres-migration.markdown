@@ -2,6 +2,8 @@
 layout: post
 title: "Migrating Rails application to Postgres: Migration"
 tags: mychain postgres rails
+author: "Robin Roestenburg"
+published_at: "2011-09-21"
 ---
 
 Yesterday, I wrote a post about installing Postgres on your Mac. This post will explain how to migrate your Rails application to Postgres.

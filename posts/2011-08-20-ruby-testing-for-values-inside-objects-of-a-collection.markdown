@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Testing for values inside objects of a collection"
 tags: ruby mychain
+author: Robin Roestenburg
+published_at: "2011-08-20"
 ---
 Yesterday I showed the first two of my Nokogiri *learning tests*. I wrote another test which gave me some problems. Let me show you the initial test first:
     #!ruby

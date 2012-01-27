@@ -2,8 +2,8 @@
 layout: post
 title: "SimpleCov: Fix for grouping based on custom filter class"
 tags: simplecov
-author: Robin Roestenburg
-published_at: 28th September 2011
+author: "Robin Roestenburg"
+published_at: "2011-09-28"
 ---
 
 Tonight I'll be making my first pull request on Github, yay! I've fixed the bug in the SimpleCov gem that I mentioned in [this post](http://www.tamingthemindmonkey.com/ruby-code-coverage-using-simplecov).

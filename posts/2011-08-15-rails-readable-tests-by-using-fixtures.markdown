@@ -2,6 +2,8 @@
 layout: post
 title: "Rails: Readable tests by using fixtures"
 tags: fixtures mychain rails ruby
+author: Robin Roestenburg
+published_at: "2011-08-15"
 ---
 I spent some time working on the scraper for the pages containing the card details. After implementing most of the functionality I ended up with the following test:
     #!ruby

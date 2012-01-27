@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Stubbing with Mocha"
 tags: mocha mychain rails
+author: Robin Roestenburg
+published_at: "2011-09-04"
 ---
 The scraper module has some classes that interact with each other. When testing a particular class I want to stub out all other classes, so that I'm able to test the class in isolation. This way, a failing test is almost always caused by the class under test and not some other class. Also, using stubs I'm able to generated some edge cases that are difficult to reproduce otherwise.
 

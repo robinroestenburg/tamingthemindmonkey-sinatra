@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Private methods and code formatting"
 tags: mychain ruby
+author: Robin Roestenburg
+published_at: "2011-09-05"
 ---
 Ok, tonight a post about private methods in Ruby. First, let me say, that I think defining the visibility of your methods is a good programming style and should be encouraged. However, defining visibility of a method in Ruby is somewhat different then I am used to. In its most basic form though, I think it leads to bad code formatting. Furthermore a private method is not a private as I thought - this is not too big of a problem, but still something that bugs me a bit.
 

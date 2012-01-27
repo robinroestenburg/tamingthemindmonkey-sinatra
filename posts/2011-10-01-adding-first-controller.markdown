@@ -2,6 +2,8 @@
 layout: post
 title: "Adding first controller"
 tags: rspec mychain
+author: "Robin Roestenburg"
+published_at: "2011-10-01"
 ---
 
 So far, I've not done anything yet with the frontend of the application. Tonight, I'll make a start with it and implement an initial version of the view for showing a list of cards. Beware, this post contains a lot of newbie-stuff.

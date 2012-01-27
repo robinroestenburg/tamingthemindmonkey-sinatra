@@ -2,6 +2,8 @@
 layout: post
 title: "Rails: Overriding the == method of ActiveRecord::Base (Don't do it!)"
 tags: activerecord mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-24"
 ---
 I ran into some trouble the other day when comparing a **Card** fixture against a **Card** object returned by the scraper code. Asserting that the cards present in the fixtures were the same as the cards that the scraper returned failed. TextMate returned the following error:
 

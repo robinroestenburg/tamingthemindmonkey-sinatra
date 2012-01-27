@@ -2,6 +2,8 @@
 layout: post
 title: "Fixtures be gone"
 tags: factory_girl fictures mychain
+author: Robin Roestenburg
+published_at: "2011-09-02"
 ---
 I didn't have much time to work on the application yesterday, so I only replaced the fixtures by objects that are created inside the test for which they provide the data. Today I want to clean this up a bit by introducing factories to the tests.
 

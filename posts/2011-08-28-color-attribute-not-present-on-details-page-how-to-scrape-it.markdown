@@ -2,6 +2,8 @@
 layout: post
 title: "Color attribute not present on details page, how to scrape it?"
 tags: mychain
+author: Robin Roestenburg
+published_at: "2011-08-28"
 ---
 I went over the list of fields that I needed to scrape from the Gatherer site and saw that I was missing one: the color of the card.
 

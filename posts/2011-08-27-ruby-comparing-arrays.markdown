@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Comparing arrays"
 tags: ruby mychain
+author: Robin Roestenburg
+published_at: "2011-08-27"
 ---
 One small follow-up post on my [previous post](http://www.tamingthemindmonkey.com/scraping-mana-symbols) on scraping the mana symbols. I actually forgot something before building the mana symbol scraping code. I had not changed the `assert_card_equal` to also compare the mana symbols that are present on an card. Not really TDD'ish :-) So, after I finished the code all my tests were still passing even though I had not added the **Card** to **Mana* mappings to the fixtures.
 

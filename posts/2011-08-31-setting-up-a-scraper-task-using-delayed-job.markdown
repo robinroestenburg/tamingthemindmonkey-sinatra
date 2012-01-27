@@ -2,6 +2,8 @@
 layout: post
 title: "Setting up scraper task using Delayed Job"
 tags: delayed_job mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-31"
 ---
 Scraping a set of Magic: The Gathering cards will take a couple of minutes. I want to run this through a background task. Heroku (where I probably will host the application, once finished) supports running background processes through [delayed_job](https://github.com/collectiveidea/delayed_job) (DJ).
 

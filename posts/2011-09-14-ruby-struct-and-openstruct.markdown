@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Struct and OpenStruct"
 tags: mychain ruby
+author: "Robin Roestenburg"
+published_at: "2011-09-14"
 ---
 
 As I wrote [yesterday](http://www.tamingthemindmonkey.com/decoupling-the-gatherer-library), I want to remove all reference to the model classes of the application from the scraper code. I'll first replace all references to the model classes by structs.

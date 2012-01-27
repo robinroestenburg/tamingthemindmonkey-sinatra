@@ -2,6 +2,8 @@
 layout: post
 title: "ActiveRecord: Do I need the has_many :through?"
 tags: activerecord mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-23"
 ---
 Yesterday I've implemented a many-to-many relationship in Rails using the has_many :through association.
 

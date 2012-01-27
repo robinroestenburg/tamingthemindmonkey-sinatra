@@ -3,7 +3,8 @@
 layout: post
 title: Starting the chain
 tags: mtg mychain
-
+author: Robin Roestenburg
+published_at: "2011-08-09"
 ---
 
 I've been wanting to experiment with the motivational/productivity technique called 'Don't break the chain' (see

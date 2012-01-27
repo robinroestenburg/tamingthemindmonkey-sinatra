@@ -2,6 +2,8 @@
 layout: post
 title: "ActiveRecord: default_scope not applied when used in has_many :through associations"
 tags: activerecord mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-25"
 ---
 Currently I have defined the following many-to-many relationship in my model:
     #!ruby

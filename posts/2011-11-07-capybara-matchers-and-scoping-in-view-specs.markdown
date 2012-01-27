@@ -2,6 +2,8 @@
 layout: post
 title: "Capybara matchers and scoping in view specs"
 tags: capybara mychain
+author: "Robin Roestenburg"
+published_at: "2011-11-07"
 ---
 
 Last week I ran into a problem with Capybara when using it in view specs. I wanted to write a view spec which tests if a form and its elements are available. Using Webrat this could be written like this:

@@ -2,6 +2,8 @@
 layout: post
 title: Handling Gatherer checklist inconsistency
 tags: mtg mychain
+author: Robin Roestenburg
+published_at: "2011-08-14"
 ---
 <p>Yesterday I ran into an inconsistency in the number that the Gatherer site showed above a checklist and the actual number of cards that are present on the checklist. As an example I mentioned the checklist for <a title="Mirrodin Besieged checklist" href="http://gatherer.wizards.com/Pages/Search/Default.aspx?sort=cn+&amp;output=checklist&amp;set=|[%22Mirrodin%20Besieged%22]" target="_blank">Mirrodin Besieged</a>: Gatherer says it has 150 cards while the table below counts 155 cards (which is the correct number).</p>
 <p><img class="posterous_plugin_object posterous_plugin_object_image" src="http://getfile3.posterous.com/getfile/files.posterous.com/temp-2011-08-14/hltEGumzaDJfFrmygqoundyczvJEFInsxpoDnqlzHvHbcuBcnEaCItalpbcm/Screen_Shot_2011-08-14_at_12.36.50_PM.png.thumb100.png?content_part=CvvBweihgoJrJbDhclsw" alt="" width="100" height="100" />The problem is caused by a number of cards that have the same name. This set has 2 variations for each basic land card, so two <em>Plains</em>, two <em>Island</em>, two <em>Swamp</em>, two <em>Mountain</em> and two <em>Forest</em> cards:</p>

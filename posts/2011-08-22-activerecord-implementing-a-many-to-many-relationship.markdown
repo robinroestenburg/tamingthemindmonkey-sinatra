@@ -2,6 +2,8 @@
 layout: post
 title: "ActiveRecord: Implementing a many-to-many relationship"
 tags: activerecord mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-22"
 ---
 *Magic: The Gathering* spell cards cost mana to play - the cost is shown on the top right of the card's image. Each mana symbol on the card represents one mana of that color that must be paid when playing the card as a spell. A number in a gray circle next to the mana symbols represents how much additional generic mana must be paid; this additional mana can be of any color or colorless. For example, the *Accorder Paladin* card shown below costs two mana in total - one white and one other.
 

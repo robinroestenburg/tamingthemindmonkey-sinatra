@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Github for Mac
+author: Robin Roestenburg
+published_at: "2011-08-10"
 ---
 
 While setting up a repository for the new project on GitHub

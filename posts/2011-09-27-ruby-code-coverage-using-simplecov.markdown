@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby: Code coverage using SimpleCov"
 tags: simplecov mychain
+author: "Robin Roestenburg"
+published_at: "2011-09-27"
 ---
 
 Tonight, I'll be adding test coverage metrics to my application. First, I had to look up which library 'does test coverage' in Ruby land.

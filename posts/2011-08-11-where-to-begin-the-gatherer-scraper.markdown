@@ -2,6 +2,8 @@
 layout: post
 title: Where to begin? The Gatherer scraper!
 tags: mtg mychain scraper
+author: Robin Roestenburg
+published_at: "2011-08-11"
 ---
 <div>After setting up my repository and playing around (too long) with the GitHub  for Mac application yesterday, I'm ready to start the actual  development. First though, let's define the main goal of the  program. Currently, I'd define it like this: <em>&nbsp;</em></div>
 <div>

@@ -2,6 +2,8 @@
 layout: post
 title: "Write learning tests for your third-party libraries"
 tags: mychain tdd
+author: Robin Roestenburg
+published_at: "2011-08-19"
 ---
 A couple of weeks ago I read the book Clean Code (now wishing I've read the book in 2008 when it was first published). In one of the chapters Robert 'Uncle Bob' Martin writes about integrating third-party libraries into your application. Basically he states the following about learning and integrating a library:
 

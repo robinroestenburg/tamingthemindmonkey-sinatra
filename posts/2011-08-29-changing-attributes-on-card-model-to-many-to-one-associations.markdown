@@ -2,6 +2,8 @@
 layout: post
 title: "Changing attributes on Card model to many-to-one associations"
 tags: mychain rails
+author: Robin Roestenburg
+published_at: "2011-08-29"
 ---
 Today I normalized the **Card** data model a bit. I converted two attributes into associations:
 

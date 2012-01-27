@@ -2,6 +2,8 @@
 layout: post
 title: "Scraping mana symbols"
 tags: mychain tdd
+author: Robin Roestenburg
+published_at: "2011-08-27"
 ---
 I kinda lost my actual goal for this chain out of sight for the last couple of days. I've not written a lot of code for the program and got a bit sidetracked by Ruby/Rails details. It kinda turned into me exploring the Ruby world ;) But as I am working on a chain, I have made a commitment to produce something that will get me closer to my goal every day.
 

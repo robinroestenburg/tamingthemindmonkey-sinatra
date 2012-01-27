@@ -2,6 +2,8 @@
 layout: post
 title: "Decoupling the Gatherer library"
 tags: mychain
+author: Robin Roestenburg
+published_at: "2011-09-12"
 ---
 Tonight I've be working on (or rather thinking about) decoupling the scraper code from the model classes. In various parts in the scraper I use model classes directly. For example, the following code creates a record in the join-model **CardMana**:
 {% highlight ruby %}
