@@ -1,12 +1,15 @@
 %h3.headline= @year
 
-- if @posts.any?
-  %ul.bullet-list
-    - @posts.each do |post|
-      %li
-        %span.title
-          %a{:href => "/#{post.permalink}"}= post.title
-        %span.posted_at
-          = post.published_at
-        %span.tags
-          = post.tags
+- if @months.any?
+  - @months.each do |month|
+    %h5= month[0]
+    %ul.bullet-list
+
+      - month[1].each do |post|
+        %li
+          %span.title
+            %a{:href => "/#{post.permalink}"}= post.title
+          %span.posted_at
+            = post.published_at
+          %span.tags
+            = post.tags

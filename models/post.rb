@@ -7,12 +7,14 @@ class Post
                 :tags,
                 :filename
 
+  POSTS_DIR = 'posts'
+
   def initialize
     @tags = []
   end
 
   def permalink
-    match_data = filename.match(/posts\/(\d+)-(\d+)-(\d+)-(.+)\.markdown/)
+    match_data = filename.match(/#{POSTS_DIR}\/(\d+)-(\d+)-(\d+)-(.+)\.markdown/)
     "#{match_data[1]}/#{match_data[2]}/#{match_data[3]}/#{match_data[4]}"
   end
 
@@ -64,17 +66,20 @@ class Post
   end
 
   def self.find_by_year(year)
-    all_posts.select { |post| post.filename.start_with? "posts/#{year}" }
+    all_posts.
+      select { |post| post.filename.start_with? "#{POSTS_DIR}/#{year}" }.
+      group_by { |post| post.filename[11..12] }
+
   end
 
   def self.find_by_month(year, month)
-    all_posts.select { |post| post.filename.start_with? "posts/#{year}-#{month}" }
+    all_posts.select { |post| post.filename.start_with? "#{POSTS_DIR}/#{year}-#{month}" }
   end
 
   def self.all_posts
-    Dir.new('posts').
+    Dir.new(POSTS_DIR).
       select { |file_name| file_name != '.' &&  file_name != '..' }.
-      collect { |file_name| Post.build("posts/#{file_name}") }.
+      collect { |file_name| Post.build("#{POSTS_DIR}/#{file_name}") }.
       reverse
   end
 

@@ -25,7 +25,7 @@ class TamingTheMindMonkey < Sinatra::Application
 
   get %r{/([\d]+)} do |year|
     @year   = year
-    @posts  = Post.find_by_year(@year)
+    @months  = Post.find_by_year(@year)
     haml :year
   end
 

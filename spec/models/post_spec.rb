@@ -25,6 +25,30 @@ describe Post do
     end
   end
 
+  describe '#find_by_year' do
+
+    let(:foo) { double(:filename => 'posts/2011-01-01-Foo') }
+    let(:bar) { double(:filename => 'posts/2011-02-02-Bar') }
+
+    before do
+      Dir.stub(:new).and_return(['.', '..', '2011-01-01-Foo', '2011-02-02-Bar', '2012-01-01-Baz'])
+      Post.stub(:parse_file).and_return(['Tags', 'Quux'])
+    end
+
+    it 'returns a list of posts in a year partitioned by month' do
+      Post.find_by_year(2011)['01'].should == [foo]
+      Post.find_by_year(2011)['02'].should == [bar]
+    end
+
+    it 'returns nil for a month that has no posts' do
+      Post.find_by_year(2011)['03'].should be_nil
+    end
+
+    it 'returns an empty hash if no posts are found' do
+      Post.find_by_year(2013).should == {}
+    end
+  end
+
   describe '#tags' do
 
     it { should respond_to(:tags) }
