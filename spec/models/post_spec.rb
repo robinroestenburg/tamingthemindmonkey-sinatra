@@ -58,12 +58,12 @@ describe Post do
     end
 
     it 'returns a list of posts in a year partitioned by month' do
-      Post.find_by_year(2011)['01'].should == [foo]
-      Post.find_by_year(2011)['02'].should == [bar]
+      Post.find_by_year(2011)[1].should == [foo]
+      Post.find_by_year(2011)[2].should == [bar]
     end
 
     it 'returns nil for a month that has no posts' do
-      Post.find_by_year(2011)['03'].should be_nil
+      Post.find_by_year(2011)[3].should be_nil
     end
 
     it 'returns an empty hash if no posts are found' do
