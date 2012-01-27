@@ -44,9 +44,11 @@ body
     font-size: 1em
 
     ul.post-details
+      width: 100%
+      position: relative
       list-style-type: none
+      padding-bottom: 20px
       margin-top: -10px
-      margin-bottom: 20px
       display: block
       padding-left: 0
 
@@ -60,18 +62,19 @@ body
         background-position: 0px 4px
         float: left
         padding-left: 20px
+        padding-top: 2px
         padding-right: 15px
 
-        &.tag-posted
+        &.tags-posted
           background-image: url('/images/blog-lists/tags.png')
 
         &.time-posted
           background-image: url('/images/blog-lists/clock.png')
 
-        &.use-posted
+        &.user-posted
           background-image: url('/images/blog-lists/user.png')
 
-        &.com-posted
+        &.comments-posted
           background-image: url('/images/blog-lists/comments.png')
 
         &.more-posted

@@ -3,24 +3,21 @@
 
     %h2.blog-heading= @post.title
 
-    .blog-share
-      %a{:href => "#"}
-        %img{:class => "icon-hover", :src => "/images/icons/twitter-large.png", :alt => "twitter", :width => "30"}
-
     -# %img{:class => "blog-img", :src => "/images/gallery/blog-thumbs/1.jpg"}
     .blog-content
       %ul.post-details
         %li.time-posted= @post.published_at
-        %li.use-posted= @post.author
+        %li.user-posted= @post.author
         - if @post.tags
-          %li.tag-posted
+          %li.tags-posted
             - @post.tags.each_with_index do |tag, index|
               - if @post.tags.length - 1 == index
                 %a{:href => "/tag/#{tag}"}= tag
               - else
-                %a{:href => "/tag/#{tag}"}= "#{tag}, "
-        %li.com-posted 12 Comments
-        %li.mor-posted
+                %a{:href => "/tag/#{tag}"}>= tag
+                ,
+        %li.comments-posted 12 Comments
+        %li.more-posted
           %a{:href => "/"} Back To Posts
 
       ~ markdown(@post.content)
