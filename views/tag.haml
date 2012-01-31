@@ -1,12 +1,28 @@
-%h3.headline= "Tag: #{@tag}"
+.post-list
+  %h3
+    %strong= "Tag: #{@tag}"
 
-- if @posts.any?
-  %ul.bullet-list
-    - @posts.each do |post|
+  - if @posts.any?
+    %ul.bullet-list
+
       %li
         %span.title
-          %a{:href => "/#{post.permalink}"}= post.title
+          %strong Title
         %span.posted_at
-          = post.published_at
+          %strong Posted at
         %span.tags
-          = post.tags
+          %strong Tags
+
+        - @posts.each do |post|
+          %li
+            %span.title
+              %a{:href => "/#{post.permalink}"}= post.title
+            %span.posted_at
+              = post.published_at.strftime('%B %d, %Y')
+            %span.tags
+              - post.tags.each_with_index do |tag, index|
+                - if post.tags.length - 1 == index
+                  %a{:href => "/tag/#{tag}"}= tag
+                - else
+                  %a{:href => "/tag/#{tag}"}>= tag
+                  ,
