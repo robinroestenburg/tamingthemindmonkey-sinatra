@@ -12,17 +12,6 @@ ul.icon-list{
   padding-bottom:13px; /* General Pading is 30 Bottom, so this is a corectional value because the icons have 17 bottom */
 }
 
-ul.bullet-list{
-  list-style:circle;
-  font-size:12px;
-  display:block;
-}
-
-ul.bullet-list li{
-  padding-top:0px;
-  padding-bottom:17px;
-}
-
 ol.number-list{
   display:block;
 }
@@ -106,7 +95,6 @@ li.list-warning{
   background-repeat:no-repeat;
   background-position:0px 2px;
   padding-left:30px;
-
 }
 
 li.list-tick{

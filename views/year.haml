@@ -1,15 +1,30 @@
-%h3.headline= @year
+.post-list
+  %h2
+    %strong= @year
 
-- if @months.any?
-  - @months.each do |month|
-    %h5= Date.new(@year, month[0]).strftime('%B')
-    %ul.bullet-list
+  - if @months.any?
+    - @months.each do |month|
+      %h3= Date.new(@year, month[0]).strftime('%B')
+      %ul.bullet-list
 
-      - month[1].each do |post|
         %li
           %span.title
-            %a{:href => "/#{post.permalink}"}= post.title
+            %strong Title
           %span.posted_at
-            = post.published_at
+            %strong Posted at
           %span.tags
-            = post.tags
+            %strong Tags
+
+        - month[1].each do |post|
+          %li
+            %span.title
+              %a{:href => "/#{post.permalink}"}= post.title
+            %span.posted_at
+              = post.published_at.strftime('%B %d, %Y')
+            %span.tags
+              - post.tags.each_with_index do |tag, index|
+                - if post.tags.length - 1 == index
+                  %a{:href => "/tag/#{tag}"}= tag
+                - else
+                  %a{:href => "/tag/#{tag}"}>= tag
+                  ,

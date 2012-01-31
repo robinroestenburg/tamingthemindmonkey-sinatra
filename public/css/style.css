@@ -66,7 +66,6 @@ a:visited{
 small {
   font-style:italic;
   color:#e44d26;
-  font-size:16px;
 }
 
 #tweets li {
@@ -84,22 +83,18 @@ small {
 
 p.tweet_link_0{
   font-weight:300;
-  font-size:16px;
   line-height:30px;
 }
 
 
 #tweets li.tweet_content_0 {
-  font-size:22px;
   border-top:0px none;
 }
 #tweets li:last-child{
-  font-size:22px;
   border-bottom:0px none;
 }
 
 li.tweet_content_0{
-  font-size:22px;
 }
 
 /* For Styles Reffering To The CSS3 Buttons, check buttons.css */
@@ -206,7 +201,6 @@ li.tweet_content_0{
 
 a.menuTitle{
   color:#6d6d6d;
-  font-size:14px;
   font-weight:lighter;
 }
 
@@ -249,7 +243,6 @@ a.menuTitle{
 .dropdown li a {
   text-decoration:none;
   color:#777;
-  font-size:12px;
   margin-top:30px;
 }
 .dropdown li a:hover {
@@ -266,7 +259,6 @@ a.menuTitle{
 }
 
 h3.headline-heading{
-  font-size:18px;
   width:705px;
   color:#6e6e6e;
   line-height:30px;
@@ -357,7 +349,6 @@ img.home-thumb-over{
 /*----------------------------------------------------*/
 
 p, blockquote{
-  font-size:12px;
 }
 
 blockquote.big-quote{
@@ -596,7 +587,6 @@ ul.tabNavigation {
   background-repeat:repeat-x;
   width:8px;
   width:880px;
-  font-size:12px;
   display:block;
   margin-right:85px;
   list-style:none;
@@ -689,23 +679,19 @@ div.tabs > div h2 {
 
 p.location-title{
   padding-bottom:15px;
-  font-size:14px;
   float:right;
 }
 
 #name_label{
-  font-size:14px;
 }
 
 
 #message_label{
-  font-size:14px;
   display:block;
   margin-top:30px;
 }
 
 #email_label{
-  font-size:14px;
   display:block;
   margin-top:30px;
 }
@@ -735,7 +721,7 @@ p.location-title{
 /*----------------------------------------------------*/
 /*Tips , Tooltip Styles  */
 /*----------------------------------------------------*/
-.tipsy { padding-top:5px; padding-left:4px; font-size: 12px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat; }
+.tipsy { padding-top:5px; padding-left:4px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat; }
 .tipsy-inner { padding: 5px 8px 4px 8px; background-color: #343434; color: white; max-width: 200px; text-align: center; }
 .tipsy-inner { -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 .tipsy-north { background-position: top center }
@@ -1010,23 +996,19 @@ img.ad{
 
 p.location-title{
   padding-bottom:15px;
-  font-size:14px;
   float:right;
 }
 
 #name_label{
-  font-size:14px;
 }
 
 
 #message_label{
-  font-size:14px;
   display:block;
   margin-top:30px;
 }
 
 #email_label{
-  font-size:14px;
   display:block;
   margin-top:30px;
 }

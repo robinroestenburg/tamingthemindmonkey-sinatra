@@ -12,6 +12,7 @@ $monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans m
 @import compass/css3/box-shadow
 @import compass/typography/vertical_rhythm
 @import compass/utilities/color/contrast
+@import compass/utilities/text/ellipsis
 
 @import compass/css3/images
 @import blueprint
@@ -22,26 +23,44 @@ $monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans m
 
 $blueprint-font-family: Arial, Helvetica, sans-serif
 $blueprint-fixed-font-family: $monaco
-$blueprint-font-size: 12px
 
 $contrasted-dark-default:  #333
 $contrasted-light-default: #e7e7e7
 
-// +establish-baseline(16px)
++establish-baseline(12px)
 
 body
-  font-family: Arial, Helvetica, sans-serif
-  font-size: 12px
+  +blueprint-typography(true)
   background-image: url('/images/background/pattern/pat5.png')
   background-repeat: repeat
 
+  .post-list
+    h3
+      margin-bottom: 0.5em
+    ul
+      list-style: none
+      padding-left: 0
 
+      li
 
+    span
+      position: relative
+      display:  inline-block
 
+      &.title
+        +ellipsis
+        width: 450px
+
+      &.posted_at
+        width: 150px
+
+      &.tags
+        width: 250px
+
+        a
+          text-decoration: none
 
   .blog-item
-    +blueprint-typography(true)
-    font-size: 1em
 
     ul.post-details
       width: 100%

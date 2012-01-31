@@ -133,212 +133,252 @@ p.footer-text {
   float: left;
 }
 
+/* line 53, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body {
+  font-size: 75%;
+  line-height: 2em;
+}
+
+/* line 57, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html > body {
+  font-size: 12px;
+}
+
 /* line 32, ../../views/sass/screen.sass */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  background-image: url("/images/background/pattern/pat5.png");
-  background-repeat: repeat;
-}
-/* line 42, ../../views/sass/screen.sass */
-body .blog-item {
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
   color: #333333;
   font-size: 75%;
-  font-size: 1em;
+  background-image: url("/images/background/pattern/pat5.png");
+  background-repeat: repeat;
 }
 /* line 51, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h1, body .blog-item h2, body .blog-item h3, body .blog-item h4, body .blog-item h5, body .blog-item h6 {
+body h1, body h2, body h3, body h4, body h5, body h6 {
   font-weight: normal;
   color: #222222;
 }
 /* line 52, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h1 img, body .blog-item h2 img, body .blog-item h3 img, body .blog-item h4 img, body .blog-item h5 img, body .blog-item h6 img {
+body h1 img, body h2 img, body h3 img, body h4 img, body h5 img, body h6 img {
   margin: 0;
 }
 /* line 53, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h1 {
+body h1 {
   font-size: 3em;
   line-height: 1;
   margin-bottom: 0.50em;
 }
 /* line 54, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h2 {
+body h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
 }
 /* line 55, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h3 {
+body h3 {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1.00em;
 }
 /* line 56, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h4 {
+body h4 {
   font-size: 1.2em;
   line-height: 1.25;
   margin-bottom: 1.25em;
 }
 /* line 57, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h5 {
+body h5 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.50em;
 }
 /* line 58, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item h6 {
+body h6 {
   font-size: 1em;
   font-weight: bold;
 }
 /* line 59, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item p {
+body p {
   margin: 0 0 1.5em;
 }
 /* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item p .left {
+body p .left {
   display: inline;
   float: left;
   margin: 1.5em 1.5em 1.5em 0;
   padding: 0;
 }
 /* line 61, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item p .right {
+body p .right {
   display: inline;
   float: right;
   margin: 1.5em 0 1.5em 1.5em;
   padding: 0;
 }
 /* line 62, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item a {
+body a {
   text-decoration: underline;
   color: #0066cc;
 }
 /* line 18, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-body .blog-item a:visited {
+body a:visited {
   color: #004c99;
 }
 /* line 21, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-body .blog-item a:focus {
+body a:focus {
   color: #0099ff;
 }
 /* line 24, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-body .blog-item a:hover {
+body a:hover {
   color: #0099ff;
 }
 /* line 27, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-body .blog-item a:active {
+body a:active {
   color: #bf00ff;
 }
 /* line 63, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item blockquote {
+body blockquote {
   margin: 1.5em;
   color: #666666;
   font-style: italic;
 }
 /* line 64, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item strong, body .blog-item dfn {
+body strong, body dfn {
   font-weight: bold;
 }
 /* line 65, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item em, body .blog-item dfn {
+body em, body dfn {
   font-style: italic;
 }
 /* line 66, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item sup, body .blog-item sub {
+body sup, body sub {
   line-height: 0;
 }
 /* line 67, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item abbr, body .blog-item acronym {
+body abbr, body acronym {
   border-bottom: 1px dotted #666666;
 }
 /* line 68, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item address {
+body address {
   margin: 0 0 1.5em;
   font-style: italic;
 }
 /* line 69, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item del {
+body del {
   color: #666666;
 }
 /* line 70, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item pre {
+body pre {
   margin: 1.5em 0;
   white-space: pre;
 }
 /* line 71, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item pre, body .blog-item code, body .blog-item tt {
+body pre, body code, body tt {
   font: 1em monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace;
   line-height: 1.5;
 }
 /* line 72, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item li ul, body .blog-item li ol {
+body li ul, body li ol {
   margin: 0;
 }
 /* line 73, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item ul, body .blog-item ol {
+body ul, body ol {
   margin: 0 1.5em 1.5em 0;
   padding-left: 1.5em;
 }
 /* line 74, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item ul {
+body ul {
   list-style-type: disc;
 }
 /* line 75, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item ol {
+body ol {
   list-style-type: decimal;
 }
 /* line 76, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item dl {
+body dl {
   margin: 0 0 1.5em 0;
 }
 /* line 77, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item dl dt {
+body dl dt {
   font-weight: bold;
 }
 /* line 78, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item dd {
+body dd {
   margin-left: 1.5em;
 }
 /* line 79, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item table {
+body table {
   margin-bottom: 1.4em;
   width: 100%;
 }
 /* line 80, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item th {
+body th {
   font-weight: bold;
 }
 /* line 81, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item thead th {
+body thead th {
   background: #c3d9ff;
 }
 /* line 82, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item th, body .blog-item td, body .blog-item caption {
+body th, body td, body caption {
   padding: 4px 10px 4px 5px;
 }
 /* line 85, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item table.striped tr:nth-child(even) td,
-body .blog-item table tr.even td {
+body table.striped tr:nth-child(even) td,
+body table tr.even td {
   background: #e5ecf9;
 }
 /* line 86, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item tfoot {
+body tfoot {
   font-style: italic;
 }
 /* line 87, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item caption {
+body caption {
   background: #eeeeee;
 }
 /* line 88, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item .quiet {
+body .quiet {
   color: #666666;
 }
 /* line 89, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
-body .blog-item .loud {
+body .loud {
   color: #111111;
 }
+/* line 38, ../../views/sass/screen.sass */
+body .post-list h3 {
+  margin-bottom: 0.5em;
+}
+/* line 40, ../../views/sass/screen.sass */
+body .post-list ul {
+  list-style: none;
+  padding-left: 0;
+}
 /* line 46, ../../views/sass/screen.sass */
+body .post-list span {
+  position: relative;
+  display: inline-block;
+}
+/* line 50, ../../views/sass/screen.sass */
+body .post-list span.title {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 450px;
+}
+/* line 54, ../../views/sass/screen.sass */
+body .post-list span.posted_at {
+  width: 150px;
+}
+/* line 57, ../../views/sass/screen.sass */
+body .post-list span.tags {
+  width: 250px;
+}
+/* line 60, ../../views/sass/screen.sass */
+body .post-list span.tags a {
+  text-decoration: none;
+}
+/* line 65, ../../views/sass/screen.sass */
 body .blog-item ul.post-details {
   width: 100%;
   position: relative;
@@ -348,7 +388,7 @@ body .blog-item ul.post-details {
   display: block;
   padding-left: 0;
 }
-/* line 59, ../../views/sass/screen.sass */
+/* line 78, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li {
   background-repeat: no-repeat;
   background-position: 0px 4px;
@@ -357,27 +397,27 @@ body .blog-item ul.post-details li {
   padding-top: 2px;
   padding-right: 15px;
 }
-/* line 68, ../../views/sass/screen.sass */
+/* line 87, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.tags-posted {
   background-image: url("/images/blog-lists/tags.png");
 }
-/* line 71, ../../views/sass/screen.sass */
+/* line 90, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.time-posted {
   background-image: url("/images/blog-lists/clock.png");
 }
-/* line 74, ../../views/sass/screen.sass */
+/* line 93, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.user-posted {
   background-image: url("/images/blog-lists/user.png");
 }
-/* line 77, ../../views/sass/screen.sass */
+/* line 96, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.comments-posted {
   background-image: url("/images/blog-lists/comments.png");
 }
-/* line 80, ../../views/sass/screen.sass */
+/* line 99, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.more-posted {
   background-image: url("/images/blog-lists/more.png");
 }
-/* line 85, ../../views/sass/screen.sass */
+/* line 104, ../../views/sass/screen.sass */
 body .blog-item .blog-content .highlight {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -389,7 +429,7 @@ body .blog-item .blog-content .highlight {
   background-repeat: repeat;
   margin-bottom: 1.5em;
 }
-/* line 91, ../../views/sass/screen.sass */
+/* line 110, ../../views/sass/screen.sass */
 body .blog-item .blog-content .highlight pre {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -409,36 +449,36 @@ body .blog-item .blog-content .highlight pre {
   font-family: monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace;
   overflow-x: auto;
 }
-/* line 102, ../../views/sass/screen.sass */
+/* line 121, ../../views/sass/screen.sass */
 body .blog-item .navigation {
   margin-bottom: 5px;
 }
-/* line 105, ../../views/sass/screen.sass */
+/* line 124, ../../views/sass/screen.sass */
 body .blog-item .navigation .decoration {
   margin-bottom: 5px;
 }
-/* line 108, ../../views/sass/screen.sass */
+/* line 127, ../../views/sass/screen.sass */
 body .blog-item .navigation .previous {
   width: 440px;
   display: table-cell;
 }
-/* line 112, ../../views/sass/screen.sass */
+/* line 131, ../../views/sass/screen.sass */
 body .blog-item .navigation .previous img {
   vertical-align: middle;
   margin-right: 5px;
 }
-/* line 115, ../../views/sass/screen.sass */
+/* line 134, ../../views/sass/screen.sass */
 body .blog-item .navigation .next {
   text-align: right;
   width: 440px;
   display: table-cell;
 }
-/* line 120, ../../views/sass/screen.sass */
+/* line 139, ../../views/sass/screen.sass */
 body .blog-item .navigation .next img {
   vertical-align: middle;
   margin-left: 5px;
 }
-/* line 123, ../../views/sass/screen.sass */
+/* line 142, ../../views/sass/screen.sass */
 body .blog-item .navigation h4 {
   display: inline;
 }
