@@ -1,6 +1,6 @@
 .post-list
-  %h3
-    %strong= @month.strftime('%B')
+  %h2
+    = @month.strftime('%B')
 
   - if @posts.any?
     %ul.bullet-list

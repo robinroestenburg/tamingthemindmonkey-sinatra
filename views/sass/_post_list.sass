@@ -1,7 +1,14 @@
 .post-list
+  color: #6f6f6f
+
+  h2
+    color: #6e6e6e
+
   h3
     margin-bottom: 0.5em
+
   ul
+    margin-right: 0
     list-style: none
     padding-left: 0
 
@@ -20,6 +27,36 @@
 
     &.tags
       width: 250px
+
+      a
+        text-decoration: none
+
+.column
+
+  h2
+    color: #6e6e6e
+    margin-bottom: 0.5em
+
+  ul
+    margin: 0
+    list-style: none
+    padding-left: 0
+
+    li
+
+  span
+    position: relative
+    display:  inline-block
+
+    &.title
+      +ellipsis
+      width: 325px
+
+    &.posted_at
+      width: 125px
+
+    &.tags
+      width: 150px
 
       a
         text-decoration: none
