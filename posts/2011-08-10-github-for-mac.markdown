@@ -26,5 +26,3 @@ would take to type to perform these actions.
 
 <img class="posterous_plugin_object posterous_plugin_object_image" src="http://getfile5.posterous.com/getfile/files.posterous.com/temp-2011-08-10/kCAetodymqvjxBrtaArjJymzdyHDGmszwlzqwuiketpCxhwxJIgBytwGzlew/Screen_Shot_2011-08-10_at_8.28.53_PM.png.thumb100.png?content_part=FcHmcszoAHwpmtEpaIcq" alt="" width="100" height="100" />
 History of changes on current branch (with easy switching between branches).
-
-*Day #2*

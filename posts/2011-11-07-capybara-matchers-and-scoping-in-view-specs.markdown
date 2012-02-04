@@ -20,8 +20,8 @@ describe "posts/new.html.erb" do
   end
 
   it "renders the form to create a post" do
-    rendered.should have_selector("form", :method =&> "post", :action =&> messages_path ) do |form|
-      form.should have_selector("input", :type =&> "submit")
+    rendered.should have_selector("form", :method => "post", :action => messages_path ) do |form|
+      form.should have_selector("input", :type => "submit")
     end
   end
 end
@@ -44,7 +44,7 @@ This does not work in a view or helper spec, because Capybara's matchers and fin
 
 ~~~ text
 NoMethodError:
-   undefined method `find' for #&lt;String:0x007fb82e6b0c90&>
+   undefined method `find' for #<String:0x007fb82e6b0c90>
 ~~~
 
 

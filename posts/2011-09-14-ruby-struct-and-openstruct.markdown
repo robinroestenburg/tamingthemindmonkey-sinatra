@@ -25,8 +25,8 @@ There are two ways to create a new Struct. You can create a explicitly named str
 
 ~~~ ruby
 # Create a structure with a name in Struct
-Struct.new("Mana", :identifier, :name)    #=> Struct::Mana
-Struct::Mana.new("R", "Red")              #=> #<struct Struct::Mana identifier="R", name="Red">
+Struct.new("Mana", :identifier, :name) #=> Struct::Mana
+Struct::Mana.new("R", "Red")           #=> #<struct Struct::Mana identifier="R", name="Red">
 ~~~
 
 Defining a name for the struct (like 'Mana' above) will create a constant for that name inside class **Struct**. This is probably not a good idea, because it can lead to potential conflicts.
@@ -35,8 +35,8 @@ You can also create an anonymous struct class:
 
 ~~~ ruby
 # Create a structure named by its constant
-Mana = Struct.new(:identifier, :name)     #=> Mana
-Mana.new("R", "Red")                      #=> #<struct Mana identifier="R", name="Red">
+Mana = Struct.new(:identifier, :name) #=> Mana
+Mana.new("R", "Red")                  #=> #<struct Mana identifier="R", name="Red">
 ~~~
 
 This leads to some naming issues as well though. It would be confusing to have ActiveRecord Card classes available and also Card structs. Hmm, I do not even know if that will even work.
@@ -112,7 +112,7 @@ def get_card_details
                                :cost,
                                :strenght,
                                :toughness,
-                                :category,
+                               :category,
                                :artist,
                                :number,
                                :rarity,
@@ -156,8 +156,8 @@ def get_card_details
 end
 
 def create_card_mana(code, index)
-  OpenStruct.new({ :order =&gt; index,
-                   :identifier =&gt; code})
+  OpenStruct.new({ :order => index,
+                   :identifier => code})
 end
 ~~~
 

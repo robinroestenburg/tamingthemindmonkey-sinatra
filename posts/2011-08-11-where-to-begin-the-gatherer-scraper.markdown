@@ -24,6 +24,3 @@ published_at: "2011-08-11"
 </ol></div>
 <div>The HTML structure of the pages is ok'ish, I should be able to parse it with not much difficulty. When I get to the actual scraping of these pages, I'll elaborate more on the structure and content of these pages.</div>
 <p>I've already set up a Rails project (oh yea, this will be my first time, developing a program in Ruby/Rails - yikes!). For testing the scraper (in combination with the different Gatherer pages) I will be using the VCR gem in my unit tests, which is pretty amazing. I've played with it a bit already and set up a couple of unit tests using it. Tomorrow's post will be about that.</p>
-<blockquote>
-<div>Day #3</div>
-</blockquote>

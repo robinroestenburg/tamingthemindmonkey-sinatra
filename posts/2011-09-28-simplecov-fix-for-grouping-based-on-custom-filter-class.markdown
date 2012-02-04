@@ -14,9 +14,9 @@ SimpleCov allows you to define groups of files which are then shown on a separat
 It is possible to define a custom filter class that can be used to filter specific files. This could look like this:
 
 ~~~ ruby
-class LineFilter &lt; SimpleCov::Filter
+class LineFilter < SimpleCov::Filter
   def passes?(source_file)
-    source_file.lines.count &lt; filter_argument
+    source_file.lines.count < filter_argument
   end
 end
 ~~~
@@ -31,9 +31,9 @@ At least, that is what it should do :)
 The above **LineFilter** example is mentioned in the documentation of SimpleCov. I tried this out and configured SimpleCov as follows:
 
 ~~~ ruby
-class LineFilter &lt; SimpleCov::Filter
+class LineFilter < SimpleCov::Filter
   def passes?(source_file)
-    source_file.lines.count &lt; filter_argument
+    source_file.lines.count < filter_argument
   end
 end
 
@@ -58,7 +58,7 @@ def grouped(files)
     grouped[name] = SimpleCov::FileList.new(files.select {|source_file| !filter.passes?(source_file)})
     grouped_files += grouped[name]
   end
-  if groups.length &gt; 0 and (other_files = files.reject {|source_file| grouped_files.include?(source_file)}).length &gt; 0
+  if groups.length > 0 and (other_files = files.reject {|source_file| grouped_files.include?(source_file)}).length > 0
     grouped["Ungrouped"] = SimpleCov::FileList.new(other_files)
   end
   grouped
@@ -89,14 +89,14 @@ The second is used when you define it like this:
 
 ~~~ ruby
 add_group "Long files" do |src_file|
-  src_file.lines.count &gt; 100
+  src_file.lines.count > 100
 end
 ~~~
 
 The StringFilter class looks like this:
 
 ~~~ ruby
-class StringFilter &lt; SimpleCov::Filter
+class StringFilter < SimpleCov::Filter
   # Returns true when the given source file's filename matches the
   # string configured when initializing this Filter with StringFilter.new('somestring)
   def passes?(source_file)
@@ -115,7 +115,7 @@ The **BlockFilter** class has the same negation - and the same problem.
 Renaming the **passes?** method to **matches?** will make the intent of the code more clear: *When a file matches a filter then it is filtered from the result*. I can get rid of the negation now as well. This leaves the following **StringFilter** class:
 
 ~~~ ruby
-class StringFilter &lt; SimpleCov::Filter
+class StringFilter < SimpleCov::Filter
   # Returns true when the given source file's filename matches the
   # string configured when initializing this Filter with StringFilter.new('somestring)
   def matches?(source_file)
@@ -150,5 +150,3 @@ All tests and features are passing, time to commit.
 
 ### Finishing up
 Committing these changes to the forked project and creating a pull request is so easy, I'm not even going to write anything about it (time's up as well ;-))
-
-*#032*

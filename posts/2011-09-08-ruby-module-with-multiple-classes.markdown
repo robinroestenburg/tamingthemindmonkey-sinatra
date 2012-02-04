@@ -16,7 +16,8 @@ It consists of three classes:
 - **DetailsPage**: Provides detailed information about a card.
 
 I've bundled these three classes into one file which contains the module:
-{% highlight ruby %}
+
+~~~ ruby
 module Gatherer
 
   class Scraper
@@ -31,7 +32,7 @@ module Gatherer
     # ...
   end
 end
-{% endhighlight %}
+~~~
 
 The Gatherer module now contains 200+ lines, which is too much for my taste :-)
 
@@ -39,7 +40,8 @@ The Gatherer module now contains 200+ lines, which is too much for my taste :-)
 I want to extract the classes from the module into separate files and reference them in such a way that they still belong to the module.
 
 First, I tried to include the classes into the module and figured that would work:
-{% highlight ruby %}
+
+~~~ ruby
 require 'scraper'
 require 'check_list_page'
 require 'details_page'
@@ -49,12 +51,13 @@ module Gatherer
   include CheckListPage
   include DetailsPage
 end
-{% endhighlight %}
+~~~
 
 This does not work, because (for example) only the instance methods of the actual **Scraper** class are mixed in to the **Gatherer** module in this case.
 
 Then I figured I could encapsulate the three classes in specific modules. This way when I mix in the modules the class gets added to the **Gatherer** module:
-{% highlight ruby %}
+
+~~~ ruby
 # gatherer.rb
 require 'scraper'
 require 'check_list_page'
@@ -73,13 +76,14 @@ module ScraperModule
 end
 
 # ...
-{% endhighlight %}
+~~~
 
 This works, but it looks a bit dodgy.
 
 ### Third time is the charm
 It was a bit hard to find the correct way for doing this, so it could either be very basic or something that is not done too often. After Googling around a bit, I found a good looking (and rather obvious) implementation:
-{% highlight ruby %}
+
+~~~ ruby
 # gatherer.rb
 require 'scraper'
 require 'check_list_page'
@@ -98,24 +102,22 @@ module Gatherer
 end
 
 # ...
-{% endhighlight %}
+~~~
 
 Every **Gatherer** module extends on it by adding a class to the module. When I `require 'gatherer'` all classes are available through the **Gatherer** namespace.
 This also has the advantage that when I `require 'scraper.rb'`, you still have to access it through the namespace.
 
 ### Another one (do not use this ;))
 Ok, so I found another implementation [on this forum post](http://www.ruby-forum.com/topic/148303):
-{% highlight ruby %}
+
+~~~ ruby
 module Gatherer
   eval File.open('scraper.rb').read
   eval File.open('details_page.rb').read
   eval File.open('check_list_page.rb').read
 end
-{% endhighlight %}
+~~~
 
 Ugly, but working :) Does not have the advantage that the namespace is enforced when requiring the `scraper.rb` file stand alone though.
 
-
 That's it for today!
-
-Day #5 - I've not written anything on day #3 and day #4 because I was learning RSpec and rewriting the existing tests.

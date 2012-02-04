@@ -24,46 +24,50 @@ I have a Gatherer module which exists of two classes:
 - **DetailsPage**: responsible for retrieving a card details page using a given card identifier. It returns a **Card**-object with all scraped attributes.
 
 I could make the **CheckListPage** return identifiers and colors (like `[40197, White]`) and use the identifier and color as input of the **DetailsPage**. This feels wrong, I would be calling **DetailsPage** like this:
-    #!ruby
-    # The identifier and color of the Doom Cannon card are determined
-    # by the CheckListPage, using constants below for readability.
-    details = DetailsPage.new(DOOM_CANNON_IDENTIFIER, DOOM_CANNON_COLOR)
-    card = details.get_card_details
+
+~~~ ruby
+# The identifier and color of the Doom Cannon card are determined
+# by the CheckListPage, using constants below for readability.
+details = DetailsPage.new(DOOM_CANNON_IDENTIFIER, DOOM_CANNON_COLOR)
+card = details.get_card_details
+~~~
 
 The color actually has nothing to do with the construction of the **DetailsPage** class, so why add it to the class? It would be better to write something like this:
-    #!ruby
-    details = DetailsPage.new(DOOM_CANNON_IDENTIFIER)
-    card = details.get_card_details
-    card.color = DOOM_CANNON_COLOR
+
+~~~ ruby
+details = DetailsPage.new(DOOM_CANNON_IDENTIFIER)
+card = details.get_card_details
+card.color = DOOM_CANNON_COLOR
+~~~
 
 This could work. But it still doesn't look right when looking at the complete algorithm for scraping the cards:
 
-    #!ruby
-    cards = []
-    checklist = CheckListPage.new('Foo')
-    ids_colors = checklist.get_card_identifiers_and_colors
+~~~ ruby
+cards = []
+checklist = CheckListPage.new('Foo')
+ids_colors = checklist.get_card_identifiers_and_colors
 
-    ids_color.each do |identifier, color|
-      details = DetailsPage.new(identifier)
-      card = details.get_card_details
-      card.color = color
-      cards &lt;&lt; card
-    end
+ids_color.each do |identifier, color|
+  details = DetailsPage.new(identifier)
+  card = details.get_card_details
+  card.color = color
+  cards << card
+end
+~~~
 
 Having the checklist page return identifiers and colors in one call doesn't seem right: a method should do one thing. So I rewrote it into this:
 
-    #!ruby
-    cards = []
-    checklist = CheckListPage.new('Foo')
-    identifiers = checklist.get__card_identifiers
+~~~ ruby
+cards = []
+checklist = CheckListPage.new('Foo')
+identifiers = checklist.get__card_identifiers
 
-    identifiers.each do |identifier|
-      details = DetailsPage.new(identifier)
-      card = details.get_card_details
-      card.color = checklist.get_card_color(identifier)
-      cards &lt;&lt; card
-    end
+identifiers.each do |identifier|
+  details = DetailsPage.new(identifier)
+  card = details.get_card_details
+  card.color = checklist.get_card_color(identifier)
+  cards << card
+end
+~~~
 
 The **CheckListPage** is still responsible for returning the color for a particular card (by a given identifier), but it does so using a separate method call (`get_card_color`). This might perform worse (minimally when I cache the checklist page in the first call) but this code is not going to be run very often so I take that for granted.
-
-**Day #20**

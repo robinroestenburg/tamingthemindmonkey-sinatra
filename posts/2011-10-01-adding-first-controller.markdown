@@ -53,7 +53,7 @@ end
 it "should have a row for each card" do
   get :index
   @cards.each do |card|
-    response.should have_selector("tr td.name", :content =&gt; card.name)
+    response.should have_selector("tr td.name", :content => card.name)
   end
 end
 ~~~
@@ -65,7 +65,7 @@ The test is failing now, as was expected:
 
 ~~~ text
 1) CardsController GET 'index' should have a row for each card
-   Failure/Error: response.should have_selector("tr td.name", :content =&gt; card.name)
+   Failure/Error: response.should have_selector("tr td.name", :content => card.name)
      expected css "tr td.name" to return something
 ~~~
 
@@ -101,7 +101,7 @@ After adding Webrat, the previous error was replaced by the following:
 
 ~~~ text
 1) CardsController GET 'index' should have a row for each card
-   Failure/Error: response.should have_selector("tr td.name", :content =&gt; card.name)
+   Failure/Error: response.should have_selector("tr td.name", :content => card.name)
      expected following output to contain a Foo tag:
 ~~~
 
@@ -115,5 +115,3 @@ After turning this on, the spec is passing - yay!
 I'm not sure about this shortcut in the controller spec allowing me to test the view through the controller. It is nicer to test the view separately, but also more work.
 
 I'm going to look around and check out how other (web application) projects have their specs set up, maybe get some other insights.
-
-*#033 ~ Learned some useful things, not very productive though*

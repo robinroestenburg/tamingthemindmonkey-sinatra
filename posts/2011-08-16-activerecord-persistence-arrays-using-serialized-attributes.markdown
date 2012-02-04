@@ -18,25 +18,29 @@ I could do this the easy way: take all lines, put `br`'s between them and be don
 Enter ActiveRecord's serialized attributes. By annotating a model's attribute with the _serialize_ keyword, you can store any Ruby type into your model. This means we are also able to store arrays into a single attribute.
 
 In the *Card* model I've created two serialized attributes: *flavor* and *description*.
-    #!ruby
-    class Card &lt; ActiveRecord::Base
-      serialize :description
-      serialize :flavor
-    end
+
+~~~ ruby
+class Card < ActiveRecord::Base
+  serialize :description
+  serialize :flavor
+end
+~~~
 
 You can write to them as you would to the 'normal' attributes. See for example the code for scraping the flavor text of a card:
-    #!ruby
-    def flavor_text_on_page(page)
-      lines = []
 
-      page.css("#{ROW_IDENTIFIER}flavorRow div.cardtextbox").each { |row|
-        lines &lt;&lt; row.inner_html
-      }
+~~~ ruby
+def flavor_text_on_page(page)
+  lines = []
 
-      lines if lines.size &gt; 0
-    end
+  page.css("#{ROW_IDENTIFIER}flavorRow div.cardtextbox").each { |row|
+    lines << row.inner_html
+  }
 
-    card.flavor = flavor_text_on_page(page)
+  lines if lines.size > 0
+end
+
+card.flavor = flavor_text_on_page(page)
+~~~
 
 For each `div`-element containing a line of flavor text a line is added to the `lines`-array. This array is then written to the `flavor` attribute on the Card model.
 

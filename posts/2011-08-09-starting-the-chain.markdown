@@ -1,5 +1,4 @@
 ---
-
 layout: post
 title: Starting the chain
 tags: mtg mychain
@@ -26,5 +25,3 @@ technique prescribes and would also fulfill some other goals of mine, like start
 better writer.
 
 This blog post marks day one of...no idea, until it's done I guess. Wish me luck!
-
-*Day #1*

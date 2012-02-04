@@ -6,7 +6,8 @@ author: Robin Roestenburg
 published_at: "2011-09-12"
 ---
 Tonight I've be working on (or rather thinking about) decoupling the scraper code from the model classes. In various parts in the scraper I use model classes directly. For example, the following code creates a record in the join-model **CardMana**:
-{% highlight ruby %}
+
+~~~ ruby
 def create_card_mana(code, index)
   card_mana = CardMana.new
   card_mana.mana_order = index
@@ -14,7 +15,7 @@ def create_card_mana(code, index)
 
   card_mana
 end
-{% endhighlight %}
+~~~
 
 [SRP](http://www.objectmentor.com/resources/articles/srp.pdf) states that a class should have only one reason to change. The scraper code violates this principle now, because changes to the model will result in changes to the scraper. Therefore all usages of the model classes should be removed. The **one** reason to change the scraper is when the Gatherer site changes.
 

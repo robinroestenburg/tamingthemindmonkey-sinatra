@@ -28,6 +28,3 @@ published_at: "2011-08-14"
 </ol>
 <p>The first option makes the scraping of the checklist page much more complex. The second option delegates the complexity, but in this case to two classes:<br />1. the caller of <strong>get_card_names</strong>; it has to retrieve the cards for each name, and add those cards together into a list of some sort, and<br />2. the class that retrieve the card details for a card name; it has to know which set the card belongs to, pick this set from the <em>Other sets</em> part, load the new details page, etc.<br />The third option also delegates the complexity of getting the correct card for a duplicate row, but only to one other class. The calling class gets the Card-objects it has requested and does not have to do anything else.</p>
 <p>I'm going with the third option for now.</p>
-<blockquote>
-<div>Day #6</div>
-</blockquote>

@@ -24,85 +24,90 @@ The Rails documentation states that: *The simplest rule of thumb is that you sho
 The many-to-many relationship between a card and mana symbols is simple enough for using `habtm`. However, I want to explicitly specify the ordering of the mana symbols as they appear on the card. As I see it now I can only do this using the `has_many :through` association and add an attribute to the join model containing the ordering of the mana symbols for the card. If anyone knows a better way, let me know!
 
 ### Generating the model and defining the associations
-Generating the model for two models, **Mana** &amp; the join model (**CardMana**) is pretty straightforward:
+Generating the model for two models, **Mana** & the join model (**CardMana**) is pretty straightforward:
 
-    rails generate model Mana identifier:string
-    rails generate model CardMana card_id:integer mana_id:integer mana_order:integer
+~~~ text
+rails generate model Mana identifier:string
+rails generate model CardMana card_id:integer mana_id:integer mana_order:integer
+~~~
 
 The **Mana** model has (for now) only one attribute, the identifier of the mana symbol. The **CardMana** model is a little more complex as you have to specify the foreign keys to either side of the relationship. Also, it contains the attribute `mana_order` which specifies the ordering.  **Note: Do not name the attribute you want to use for ordering your association 'order'. It will not generate SQL like ORDER BY order.. this not worky :P**
 
 After defining the associations the model classes look like this (omitted all other details):
 
-    #!ruby
-    class Card &lt; ActiveRecord::Base
+~~~ ruby
+class Card < ActiveRecord::Base
 
-      has_many :card_mana
-      has_many :mana, :through =&gt; :card_mana
+  has_many :card_mana
+  has_many :mana, :through => :card_mana
 
-    end
+end
 
-    class CardMana &lt; ActiveRecord::Base
+class CardMana < ActiveRecord::Base
 
-      belongs_to :card
-      belongs_to :mana
+  belongs_to :card
+  belongs_to :mana
 
-    end
+end
 
-    class Mana &lt; ActiveRecord::Base
+class Mana < ActiveRecord::Base
 
-    end
+end
+~~~
 
 I have not set up the inverse relationship in the **Mana** class, as I don't need it (yet).
 
 ### Working the relationship
 Ok, so now to check if it all works like expected. First I want to check if I can add new mana symbols to the card:
 
-    #!ruby
-    test "should have a list of mana elements" do
-      card = cards(:accorder_paladin)
-      card.mana &lt;&lt; manas(:one)
-      card.mana &lt;&lt; manas(:white)
+~~~ ruby
+test "should have a list of mana elements" do
+  card = cards(:accorder_paladin)
+  card.mana << manas(:one)
+  card.mana << manas(:white)
 
-      assert_equal 2, card.card_mana.size
-    end
+  assert_equal 2, card.card_mana.size
+end
+~~~
 
 Added two mana symbols, R and B, results in the join model being automatically updated to contain 2 elements. Note that the ordering of the mana symbols on the card is not stored. In order to also store the ordering into the join model I have to add the mana symbols using the join-model. The test I wrote for testing the ordering shows how:
 
-    #!ruby
-    test "should have an ordered list of mana elements" do
-      card = cards(:accorder_paladin)
-      card.card_mana.create(:mana_order =&gt; 1,
-                            :mana =&gt; manas(:one))
-      card.card_mana.create(:mana_order =&gt; 2,
-                            :mana =&gt; manas(:white))
+~~~ ruby
+test "should have an ordered list of mana elements" do
+  card = cards(:accorder_paladin)
+  card.card_mana.create(:mana_order => 1,
+                        :mana => manas(:one))
+  card.card_mana.create(:mana_order => 2,
+                        :mana => manas(:white))
 
-      assert_equal Mana.find_by_code('1'), card.card_mana[0].mana
-      assert_equal Mana.find_by_code('W'), card.card_mana[1].mana
-    end
+  assert_equal Mana.find_by_code('1'), card.card_mana[0].mana
+  assert_equal Mana.find_by_code('W'), card.card_mana[1].mana
+end
+~~~
 
 The tests adds two ordered mana symbols to the *Accorder Paladin* card, 1 and white, and checks that they are retrieved in the correct order into the `card_mana` array.
 
 ### Adding :order
 The above test passed, but it failed when I changed the ordered list test to add the mana symbols in a different order:
-    #!ruby
-    card.card_mana.create(:mana_order =&gt; 2,
-                          :mana =&gt; manas(:white))
-    card.card_mana.create(:mana_order =&gt; 1,
-                          :mana =&gt; manas(:one))
+
+~~~ ruby
+card.card_mana.create(:mana_order => 2,
+                      :mana => manas(:white))
+card.card_mana.create(:mana_order => 1,
+                      :mana => manas(:one))
+~~~
 
 Turns out I forgot to specify the order of the associated objects of the CardMana model class. It is probably ordered by time of insertion of the rows into the join model.
 
 Specifying the order in which the associated `card_mana` objects are returned is again straightforward, I've changed the Card model class like this:
 
-    #!ruby
-    class Card &lt; ActiveRecord::Base
+~~~ ruby
+class Card < ActiveRecord::Base
 
-      has_many :card_mana, :order =&gt; 'mana_order ASC'
-      has_many :mana, :through =&gt; :card_mana
+  has_many :card_mana, :order => 'mana_order ASC'
+  has_many :mana, :through => :card_mana
 
-    end
+end
+~~~
 
 Tests are passing again ;)
-
-**Day #14 (two weeks!)**
-

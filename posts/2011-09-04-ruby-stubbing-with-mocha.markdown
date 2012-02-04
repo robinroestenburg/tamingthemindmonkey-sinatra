@@ -18,16 +18,18 @@ Whilst writing this post I was wondering about the difference between a stub and
 To start with I've used the [Mocha](http://mocha.rubyforge.org/) gem, which I could fit in easily into my existing Test::Unit test cases. When (not if) I cross over to RSpec I'll compare Mocha against the stubbing and mocking capabilities provided by RSpec and see if I'll keep on using it.
 
 Mocha is easy to set up (as always I guess), add the following line to the *Gemfile* of your project:
-{% highlight ruby %}
-gem 'mocha', '~&gt; 0.9.12'
-{% endhighlight %}
+
+~~~ ruby
+gem 'mocha', '~> 0.9.12'
+~~~
 
 Run `bundle install` and you're set.
 
 ### Refactoring
 The code below was untested, I wrote it in order to get the `delayed_job` gem to work.
-{% highlight ruby %}
-class Scraper &lt; Struct.new(:set_name)
+
+~~~ ruby
+class Scraper < Struct.new(:set_name)
 
   def perform
     cards = []
@@ -39,17 +41,18 @@ class Scraper &lt; Struct.new(:set_name)
       details = DetailsPage.new(identifier)
       card = details.get_card_details
       card.color = checklist.get_card_color(identifier)
-      cards &lt;&lt; card
+      cards << card
     end
 
     cards
   end
 end
-{% endhighlight %}
+~~~
 
 I knew to be able to test this code efficiently I had to fake the **CheckListPage** and **DetailsPage** classes. I did not know how to do that then, so I skipped the tests - am going to write them now :) The current code could use some refactoring before I continue though, the creation of the **CheckListPage** and the retrieval of the identifiers should be done in a separate method:
-{% highlight ruby %}
-class Scraper &lt; Struct.new(:set_name)
+
+~~~ ruby
+class Scraper < Struct.new(:set_name)
 
   def perform
     cards = []
@@ -60,7 +63,7 @@ class Scraper &lt; Struct.new(:set_name)
       details = DetailsPage.new(identifier)
       card = details.get_card_details
       card.color = @checklist.get_card_color(identifier)
-      cards &lt;&lt; card
+      cards << card
     end
 
     cards
@@ -71,11 +74,12 @@ class Scraper &lt; Struct.new(:set_name)
     @checklist.get_card_identifiers
   end
 end
-{% endhighlight %}
+~~~
 
 Same should be done with the code inside the `each`-block:
-{% highlight ruby %}
-class Scraper &lt; Struct.new(:set_name)
+
+~~~ ruby
+class Scraper < Struct.new(:set_name)
 
   def perform
     cards = []
@@ -84,7 +88,7 @@ class Scraper &lt; Struct.new(:set_name)
 
     identifiers.each do |identifier|
       card = get_card(identifier)
-      cards &lt;&lt; card
+      cards << card
     end
 
     cards
@@ -107,13 +111,14 @@ class Scraper &lt; Struct.new(:set_name)
     @checklist.get_card_color(identifier)
   end
 end
-{% endhighlight %}
+~~~
 
 Much better. The refactoring also shows me what parts of the class I need to fake to get a test to work. The interaction with the **CheckListPage** and **DetailsPage** classes is contained in the methods `card_identifiers_for_set` and `get_card`.
 
 ### Writing the test
 I want to test the following: *The scraper should return the details for every card present in a checklist.* I wrote the following initial test:
-{% highlight ruby %}
+
+~~~ ruby
 test "should return details for every card present in checklist" do
   scraper = Gatherer::Scraper.new('Mirrodin Besieged')
   scraped_cards = scraper.perform
@@ -121,19 +126,21 @@ test "should return details for every card present in checklist" do
   assert_not_nil scraped_cards
   assert_equal 155, scraped_cards.size
 end
-{% endhighlight %}
+~~~
 
 This fails because I am using Fakeweb and this gem disables all HTTP connections while running your tests:
-{% highlight text %}
+
+~~~ text
 FakeWeb::NetConnectNotAllowedError:
   Real HTTP connections are disabled.
   Unregistered request:
-    GET http://gatherer.wizards.com/Pages/Search/Default.aspx?output=checklist&amp;set=[%22Foo%22].
+    GET http://gatherer.wizards.com/Pages/Search/Default.aspx?output=checklist&set=[%22Foo%22].
   You can use VCR to automatically record this request and replay it later.
-{% endhighlight %}
+~~~
 
 I don't want to record this test in VCR, the generated YAML file would be huge. I decided to stub out the two methods mentioned above:
-{% highlight ruby %}
+
+~~~ ruby
 test "should return details for every card present in checklist" do
   scraper = Gatherer::Scraper.new('Foo')
   scraper.stubs(:card_identifiers_for_set).returns([1,2,3,4,5])
@@ -144,15 +151,14 @@ test "should return details for every card present in checklist" do
   assert_not_nil scraped_cards
   assert_equal 5, scraped_cards.size
 end
-{% endhighlight %}
+~~~
 
 As you can see, there are 5 identifiers returned by the stubbed method. And for each identifier a card is returned from the factory. The test asserts that the returned number of cards by the **Scraper** class is not nil and contains 5 cards. I do not care for the details of the cards, I am testing that elsewhere.
 
 There some things I could improve in the above code and tests. The stub is not exactly on the class boundary - I think I need to improve that.
 
 Additionally, I could verify that the `get_card` method is called exactly 5 times (as expected) by adding the following line to the test (before the `perform`-method call):
-{% highlight ruby %}
-Scraper.expects(:get_card).times(5).returns(build(:card))
-{% endhighlight %}
 
-**Day #1 (Back to day one, I broke the chain yesterday after 25 days.)**
+~~~ ruby
+Scraper.expects(:get_card).times(5).returns(build(:card))
+~~~

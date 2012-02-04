@@ -6,37 +6,41 @@ author: Robin Roestenburg
 published_at: "2011-08-25"
 ---
 Currently I have defined the following many-to-many relationship in my model:
-    #!ruby
-    class Card &lt; ActiveRecord::Base
-      has_many :card_mana, :order =&gt; "mana_order ASC"
-      has_many :mana, :through =&gt; :card_mana, :order =&gt; "card_manas.mana_order ASC"
-    end
 
-    class CardMana &lt; ActiveRecord::Base
-      belongs_to :card
-      belongs_to :mana
-    end
+~~~ ruby
+class Card < ActiveRecord::Base
+  has_many :card_mana, :order => "mana_order ASC"
+  has_many :mana, :through => :card_mana, :order => "card_manas.mana_order ASC"
+end
 
-    class Mana &lt; ActiveRecord::Base
-    end
+class CardMana < ActiveRecord::Base
+  belongs_to :card
+  belongs_to :mana
+end
+
+class Mana < ActiveRecord::Base
+end
+~~~
 
 I wanted to DRY up the model by defining the ordering in the only logical place, the **CardMana** class. Defining a `default_scope` on the **CardMana** class and define the ordering in there should do the trick.
 However, the tests failed (on Rails 3.0.9) when I changed the model to this:
-    #!ruby
-    class Card &lt; ActiveRecord::Base
-      has_many :card_mana
-      has_many :mana, :through =&gt; :card_mana
-    end
 
-    class CardMana &lt; ActiveRecord::Base
-      default_scope :order =&gt; 'mana_order ASC'
+~~~ ruby
+class Card < ActiveRecord::Base
+  has_many :card_mana
+  has_many :mana, :through => :card_mana
+end
 
-      belongs_to :card
-      belongs_to :mana
-    end
+class CardMana < ActiveRecord::Base
+  default_scope :order => 'mana_order ASC'
 
-    class Mana &lt; ActiveRecord::Base
-    end
+  belongs_to :card
+  belongs_to :mana
+end
+
+class Mana < ActiveRecord::Base
+end
+~~~
 
 The ordering was not applied when the `default_scope` was added to the join model. I Google'd around a bit and found the following two sites where people were basically having the same problem:
 
@@ -48,5 +52,3 @@ The first site is an issue in the previous issue tracker for Rails (I'm guessing
 So, when specifying `card.first.mana` the `default_scope` defined in the **CardMana** join model is not part of the "default" scope for this statement or something? Feels like a bug to me.
 
 I'll try out Rails edge this weekend and see if it has not already been fixed. If it has not been fixed, I'll try and fix it and send in the patch. It'll be good experience for me to get more familiar with the Rails code.
-
-**Day #17**

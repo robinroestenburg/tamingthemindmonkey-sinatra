@@ -99,5 +99,3 @@ The negation should be left out, will add a issue for this tomorrow.
 
 ### More...
 There are some more configuration options, like adapters and formatters. Checkout the project's README for more information about these options.
-
-*#031*
