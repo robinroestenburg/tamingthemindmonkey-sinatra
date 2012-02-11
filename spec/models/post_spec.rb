@@ -20,9 +20,10 @@ describe Post do
       subject.size.should == 3
     end
 
-    it 'returns the posts in reverse order' do
-      subject.should == [bar, foo, baz]
-    end
+    it 'sorts the posts descending by publishing date'
+
+    it 'does not return unpublished posts'
+
   end
 
   describe '#build' do

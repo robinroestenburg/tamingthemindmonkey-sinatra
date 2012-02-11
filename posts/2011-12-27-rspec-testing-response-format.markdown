@@ -5,7 +5,6 @@ title: Bla
 published: false
 tags: rspec rails
 author: "Robin Roestenburg"
-published_at: "2011-12-27"
 ---
 
 Today I ran into a little problem at a project. I have a view that is loaded into a popup using

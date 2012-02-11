@@ -3,7 +3,6 @@ layout: post
 title: Bla
 published: false
 author: "Robin Roestenburg"
-published_at: "2011-12-26"
 ---
 
 Inspired by @iain_nl's mvim contraption (really cool, check it out over here: ) I wanted to have my
