@@ -80,7 +80,7 @@ class Post
     Dir.new(POSTS_DIR).
       select { |file_name| file_name != '.' &&  file_name != '..' }.
       collect { |file_name| Post.build("#{POSTS_DIR}/#{file_name}") }.
-      reverse
+      sort { |post, other| other.published_at <=> post.published_at }
   end
 
   def self.parse_tag_list(tags)
