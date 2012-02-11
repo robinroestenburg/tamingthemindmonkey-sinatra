@@ -1,38 +1,27 @@
-.columns
-  .two-columns
-    .column
+.post-list
+  %h2.column-heading Recent posts
 
-      %h2.column-heading Most recent posts
+  - if @posts.any?
+    %ul.bullet-list
 
-      - if @posts.any?
-        %ul.bullet-list
+      %li
+        %span.title
+          %strong Title
+        %span.posted_at
+          %strong Posted at
+        %span.tags
+          %strong Tags
 
+        - @posts.each do |post|
           %li
             %span.title
-              %strong Title
+              %a{:href => "/#{post.permalink}"}= post.title
             %span.posted_at
-              %strong Posted at
+              = post.published_at.strftime('%B %d, %Y')
             %span.tags
-              %strong Tags
-
-            - @posts.each do |post|
-              %li
-                %span.title
-                  %a{:href => "/#{post.permalink}"}= post.title
-                %span.posted_at
-                  = post.published_at.strftime('%B %d, %Y')
-                %span.tags
-                  - post.tags.each_with_index do |tag, index|
-                    - if post.tags.length - 1 == index
-                      %a{:href => "/tag/#{tag}"}>= tag
-                    - else
-                      %a{:href => "/tag/#{tag}"}>= tag
-                      ,&nbsp;
-
-    .column.last
-      %h2.column-heading Most recent posts.
-      %img{:class => "column-image", :src => "images/icons/settings.png", :alt => "settings"}
-      %p
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
-
+              - post.tags.each_with_index do |tag, index|
+                - if post.tags.length - 1 == index
+                  %a{:href => "/tag/#{tag}"}>= tag
+                - else
+                  %a{:href => "/tag/#{tag}"}>= tag
+                  ,&nbsp;

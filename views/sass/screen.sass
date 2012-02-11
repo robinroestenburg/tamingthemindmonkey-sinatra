@@ -13,6 +13,7 @@ $monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans m
 @import compass/typography/vertical_rhythm
 @import compass/utilities/color/contrast
 @import compass/utilities/text/ellipsis
+@import compass/css3/inline-block
 
 @import compass/css3/images
 @import blueprint
@@ -25,15 +26,22 @@ $monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans m
 $blueprint-font-family: Arial, Helvetica, sans-serif
 $blueprint-fixed-font-family: $monaco
 
-$contrasted-dark-default:  #333
-$contrasted-light-default: #e7e7e7
-
 +establish-baseline(12px)
+
+// background-image: url('/images/background/pattern/pat4.png')
 
 body
   +blueprint-typography(true)
-  background-image: url('/images/background/pattern/pat4.png')
   background-repeat: repeat
+
+  // a
+  //   color: #e44d26
+
+  //   &:visited
+  //     color: #e44d26
+
+  .decoration
+    margin-bottom: 15px
 
   .blog-item
     color: #6f6f6f
@@ -51,12 +59,7 @@ body
       display: block
       padding-left: 0
 
-      // Opacity to 70%
-      // opacity: 0.7
-      // filter: alpha(opacity=70)
-
       li
-
         background-repeat: no-repeat
         background-position: 0px 4px
         float: left
@@ -122,3 +125,5 @@ body
       h4
         display: inline
 
+.footer-socials
+  width: 80px

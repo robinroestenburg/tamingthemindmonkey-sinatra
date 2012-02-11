@@ -16,9 +16,9 @@
               - else
                 %a{:href => "/tag/#{tag}"}>= tag
                 ,&nbsp;
-        %li.comments-posted 12 Comments
+        -# %li.comments-posted 12 Comments
         %li.more-posted
-          %a{:href => "/"} Back To Posts
+          %a{:href => "/"} Back home
 
       ~ markdown(@post.content)
 

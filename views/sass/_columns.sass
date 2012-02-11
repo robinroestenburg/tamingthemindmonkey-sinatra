@@ -1,32 +1,91 @@
 .columns
-  width:          880px
-  padding-bottom: 30px
+  width:          1125px
 
   img.column-image
-    padding-top:    3px
-    padding-right:  15px
-    padding-bottom: 5px
-    float:          left
+    padding-top:    5px
+    padding-left:  5px
+    padding-bottom: 0px
+    float:          right
 
-  .two-columns
-    .column
-      color:          #6f6f6f
-      line-height:    22px
-      margin-right:   60px
-      width:          610px
-      float:          left
-      padding-bottom: 30px
+  .column
+    color:          #6f6f6f
+    line-height:    22px
+    float: left
 
-    .last
-      margin-right:   0px
-      width:          210px
+    h2
+      color: #6e6e6e
 
-  .three-columns
-    .column
-      color:          #6f6f6f
-      line-height:    22px
-      margin-right:   65px
-      width:          250px
-      float:          left
-      padding-bottom: 30px
+    .inset
+      +border-radius(5px)
+      +box-shadow(rgba(#000, .3) 0 0 5px 1px inset)
+      background-image: url('/images/background/pattern/pat1.png')
+      background-repeat: repeat
+      margin: 0
+      padding: 15px
+      margin-bottom: 15px
 
+      h2
+        text-align: center
+        color: #6e6e6e
+
+      h3
+        color: #6e6e6e
+        margin: 0
+        padding: 0
+
+      .about
+        +inline-block
+        width: 200px
+        margin: 0
+
+        .profile
+          margin-bottom: 15px
+
+    .wall
+      width: 200px
+      margin-bottom: 15px
+      position: relative
+      left: 35px
+
+    .other
+      position: relative
+      left: 50px
+      width: 200px
+      margin-bottom: 15px
+
+
+
+  .column.list
+    float: left
+    width: 880px
+
+    .decoration
+      width: 880px
+
+    .ttmm
+      margin-bottom: 15px
+      .monkey-logo
+        width: 100px
+        float: left
+        background-image: url('/images/monkey_100x100_grayscale.png')
+        height: 130px
+        background-repeat: no-repeat
+        background-position: center
+
+      .text
+        float: right
+        width: 520px
+        margin-right: 230px
+
+        h2
+          text-align: center
+
+  .column.boo
+    float: right
+
+  .social
+    padding-left: 45px
+
+.bla
+  width: 1125px
+  overflow: hidden

@@ -43,21 +43,6 @@ li.float{
   padding-bottom:30px;
 }
 
-a{
-  text-decoration:none;
-  border:0px;
-  padding:0px;
-  margin:0px;
-  color:#e44d26;
-}
-
-a:visited{
-  border:0px;
-  margin:0px;
-  padding:0px;
-  text-decoration:none;
-}
-
 /*End Of General Styles*/
 
 /*----------------------------------------------------*/
@@ -110,7 +95,7 @@ li.tweet_content_0{
   background-repeat:repeat-x;
   margin-bottom:30px;
   display:block;
-  width:880px;
+  width:1125px;
   height:8px;
 }
 
@@ -156,7 +141,7 @@ li.tweet_content_0{
 /*Body And Main Wrapper Decorations */
 /*----------------------------------------------------*/
 #main-container{
-  background-image:url(../images/wrapper.png)!important;
+  /* background-image:url(../images/wrapper.png)!important; */
   background-repeat:repeat-y;
   margin:auto;
   min-width:1016px;
@@ -757,14 +742,6 @@ img.footer-image{
   float:right;
   margin-top:-42px;
 }
-
-ul.post-details{
-  margin-top:-10px;
-  margin-bottom:30px;
-  opacity:0.7;
-  filter:alpha(opacity=70);
-}
-
 
 .post-buttons{
   margin-top:50px;

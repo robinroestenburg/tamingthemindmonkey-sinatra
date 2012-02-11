@@ -1,4 +1,4 @@
-!!!
+!!! 5
 %html
   %head
 
@@ -32,19 +32,85 @@
     #main-container
       #site-wrapper
         #header
-          %h1= "TamingTheMindMonkey.com".upcase
 
-        .decoration
+          -# .social
+          -#   <!-- AddThis Button BEGIN -->
+          -#   <div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+          -#   <a class="addthis_button_twitter_follow" addthis:userid="robinroest"></a>
+          -#   <a class="addthis_button_linkedin_follow" addthis:userid="roestenburg"></a>
+          -#   <a class="addthis_button_google_follow" addthis:userid="109341398673914811993"></a>
+          -#   <a class="addthis_button_rss_follow" addthis:url="http://www.tamingthemindmonkey.com"></a>
+          -#   </div>
+          -#   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f3190d11fa29081"></script>
+          -#   <!-- AddThis Button END -->
 
-        =yield
+
+        .columns
+          .column.list
+
+            .ttmm
+              .monkey-logo
+
+              .text
+                %h2 Taming the Mind Monkey
+                %em Mind monkey
+                is a Buddhist term meaning (amongst other things) "restless, uncontrollable".
+                %br
+                I have a monkey mind, it is always in need of new information.
+
+                Everyday I read and practice new (to me anyway) things related to programming and software development in general...
+                %br
+                \...and I blog about it.
+              .bla
+            .decoration
+            =yield
+
+          .column.boo
+            .inset
+              .about
+                .profile
+                  %h2 whoami
+                  %img{:valign => "middle", :src => '/images/Robin.jpg', :width => "70px", :class => "column-image"}
+                  My name is Robin Roestenburg. I'm a boyfriend, dad and software engineer (Ruby, Java) from the Netherlands.
+                  %br
+                  %br
+                  .follow
+                    <a href="https://twitter.com/robinroest" class="twitter-follow-button" data-show-count="false">Follow @robinroest</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                  -# %br
+                  -# %br
+                  -# This is is my development blog on which I blog about all things related to programming &amp; software development.
+                  %br
+                  You can find out more about me on my home page:
+                  %a{href: "http://www.robinroestenburg.com"}
+                    http://www.robinroestenburg.com
+
+            .wall
+              <!-- Add these tags to the HEAD section of your page. -->
+
+              <link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+              <script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+
+              <!-- You also need to place a container where you'd like the Coderwall badges to render. -->
+              <section class="coderwall" data-coderwall-username="robinroestenburg" data-coderwall-orientation="vertical"></section>
+              .bla
+
+            .other
+              %img{:valign => "middle", :src => '/images/railsberry_im_in-medium.jpg'}
 
         .clear
         .decoration
         #footer
           %p.footer-text
             &copy; Copyright 2011-2012. TamingTheMindMonkey.com
-            .footer-socials
-              %a{:title => "Twitter", :class => "tooltip", :href => "#"}
-                %img{:class => "footer-image", :src => "/images/icons/twitter-large.png", :width => "22", :alt => "Twitter"}
-              %a{:title => "Back To Top", :class => "tooltip top", :href => "#"}
-                %img{:class => "footer-image", :src => "/images/icons/up.png", :width => "22", :alt => "Go Back Up!"}
+            -# .footer-socials
+            -#   <!-- AddThis Button BEGIN -->
+            -#   <div class="addthis_toolbox addthis_default_style ">
+            -#   <a class="addthis_button_preferred_1"></a>
+            -#   <a class="addthis_button_preferred_2"></a>
+            -#   <a class="addthis_button_preferred_3"></a>
+            -#   <a class="addthis_button_preferred_4"></a>
+            -#   </div>
+            -#   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f3190d11fa29081"></script>
+            -#   <!-- AddThis Button END -->
