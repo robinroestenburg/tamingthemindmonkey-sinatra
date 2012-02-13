@@ -297,39 +297,6 @@ a.headline-button:active{
 
 /*End Of Homepage Twitter And Heading Styles */
 /*----------------------------------------------------*/
-/*Home Thumbnail Icons */
-/*----------------------------------------------------*/
-.home-thumbs{
-  width:920px;
-}
-
-img.home-thumb{
-  float:left;
-}
-
-img.home-thumb-over{
-  position:absolute;
-  filter:alpha(opacity=0);
-  opacity:0;
-  margin-left:-177px;
-}
-
-.home-thumb-wrapper{
-  float:left;
-  padding-right:10px;
-  padding-left:11px;
-  padding-top:11px;
-  padding-bottom:10px;
-  margin-right:7px;
-  background-image:url(../images/image-overlay/home-thumbs/thumb_bg.png);
-  background-repeat:no-repeat;
-  background-position:center center center center;
-  width:200px;
-  height:200px;
-}
-/*End Of Homepage Styles*/
-
-/*----------------------------------------------------*/
 /*Column Creation*/
 /*----------------------------------------------------*/
 
