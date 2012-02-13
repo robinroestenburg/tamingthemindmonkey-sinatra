@@ -8,6 +8,10 @@ module Sinatra
       def block_code(code, language)
         Pygments.highlight(code, :lexer => language)
       end
+
+      def image(link, title, alt_text)
+        "<div class=\"thumbnail-wrapper\"><div class=\"thumbnail\"><img src=\"#{link}\" /></div></div>"
+      end
     end
 
     def markdown(text)
