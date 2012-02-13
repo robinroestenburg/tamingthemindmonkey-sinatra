@@ -31,13 +31,13 @@
           %a{:href => "/#{@post.previous_post.permalink}"}<
             %img{:src => "/images/icons/left.png", :class => "icon-hover", :style => "opacity: 1;"}>
             %span<
-              %h4= @post.previous_post.truncated_title(55)
+              %h4= @post.previous_post.truncated_title(50)
 
       .next
         - if @post.has_next?
           %a{:href => "/#{@post.next_post.permalink}"}<
             %span<
-              %h4= @post.next_post.truncated_title(55)
+              %h4= @post.next_post.truncated_title(50)
             %img{:src => "/images/icons/right.png", :class => "icon-hover", :style => "opacity: 1;"}>
 
     .decoration
