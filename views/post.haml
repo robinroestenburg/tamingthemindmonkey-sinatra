@@ -1,7 +1,7 @@
 .blog-wrapper
   .blog-item
 
-    %h2.blog-heading= @post.title
+    %h2.blog-heading= @post.truncated_title(70)
 
     -# %img{:class => "blog-img", :src => "/images/gallery/blog-thumbs/1.jpg"}
     .blog-content
@@ -25,18 +25,19 @@
 
     .navigation
       .decoration
-      - if @post.has_previous?
-        .previous
+
+      .previous
+        - if @post.has_previous?
           %a{:href => "/#{@post.previous_post.permalink}"}<
             %img{:src => "/images/icons/left.png", :class => "icon-hover", :style => "opacity: 1;"}>
             %span<
-              %h4= @post.previous_post.title
+              %h4= @post.previous_post.truncated_title(55)
 
-      - if @post.has_next?
-        .next
+      .next
+        - if @post.has_next?
           %a{:href => "/#{@post.next_post.permalink}"}<
             %span<
-              %h4= @post.next_post.title
+              %h4= @post.next_post.truncated_title(55)
             %img{:src => "/images/icons/right.png", :class => "icon-hover", :style => "opacity: 1;"}>
 
     .decoration

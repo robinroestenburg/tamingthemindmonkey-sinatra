@@ -13,6 +13,17 @@ class Post
     @tags = []
   end
 
+  def truncated_title(length)
+    if title.size < length
+      title
+    else
+      if title[length] == ' '
+        title[0..length-1] + '...'
+      else
+        title[0..length] + '...'
+      end
+    end
+  end
   def permalink
     match_data = filename.match(/#{POSTS_DIR}\/(\d+)-(\d+)-(\d+)-(.+)\.markdown/)
     "#{match_data[1]}/#{match_data[2]}/#{match_data[3]}/#{match_data[4]}"
