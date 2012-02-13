@@ -117,9 +117,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 10, ../../views/sass/_columns.sass */
 .columns .column {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
   color: #6f6f6f;
   line-height: 22px;
-  float: left;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.columns .column {
+  *display: inline;
 }
 /* line 15, ../../views/sass/_columns.sass */
 .columns .column h2 {
@@ -156,78 +164,95 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 36, ../../views/sass/_columns.sass */
 .columns .column .inset .about {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
   width: 200px;
   margin: 0;
 }
-/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.columns .column .inset .about {
-  *display: inline;
-}
-/* line 41, ../../views/sass/_columns.sass */
+/* line 40, ../../views/sass/_columns.sass */
 .columns .column .inset .about .profile {
   margin-bottom: 15px;
 }
-/* line 44, ../../views/sass/_columns.sass */
+/* line 43, ../../views/sass/_columns.sass */
 .columns .column .wall {
   width: 200px;
   margin-bottom: 15px;
   position: relative;
   left: 35px;
 }
-/* line 50, ../../views/sass/_columns.sass */
+/* line 49, ../../views/sass/_columns.sass */
 .columns .column .other {
   position: relative;
   left: 50px;
   width: 200px;
   margin-bottom: 15px;
 }
-/* line 58, ../../views/sass/_columns.sass */
+/* line 57, ../../views/sass/_columns.sass */
 .columns .column.list {
-  float: left;
+  vertical-align: top;
   width: 880px;
 }
-/* line 62, ../../views/sass/_columns.sass */
+/* line 61, ../../views/sass/_columns.sass */
 .columns .column.list .decoration {
   width: 880px;
 }
-/* line 65, ../../views/sass/_columns.sass */
+/* line 64, ../../views/sass/_columns.sass */
 .columns .column.list .ttmm {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
   margin-bottom: 15px;
 }
-/* line 67, ../../views/sass/_columns.sass */
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.columns .column.list .ttmm {
+  *display: inline;
+}
+/* line 68, ../../views/sass/_columns.sass */
 .columns .column.list .ttmm .monkey-logo {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
   width: 100px;
-  float: left;
   background-image: url("/images/monkey_100x100_grayscale.png");
   height: 130px;
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 75, ../../views/sass/_columns.sass */
-.columns .column.list .ttmm .text {
-  float: right;
-  width: 520px;
-  margin-right: 230px;
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.columns .column.list .ttmm .monkey-logo {
+  *display: inline;
 }
-/* line 80, ../../views/sass/_columns.sass */
+/* line 76, ../../views/sass/_columns.sass */
+.columns .column.list .ttmm .text {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  width: 520px;
+  padding-left: 15px;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.columns .column.list .ttmm .text {
+  *display: inline;
+}
+/* line 81, ../../views/sass/_columns.sass */
 .columns .column.list .ttmm .text h2 {
   text-align: center;
 }
-/* line 83, ../../views/sass/_columns.sass */
+/* line 84, ../../views/sass/_columns.sass */
 .columns .column.boo {
-  float: right;
+  padding-left: 10px;
+  vertical-align: top;
 }
-/* line 86, ../../views/sass/_columns.sass */
+/* line 88, ../../views/sass/_columns.sass */
 .columns .social {
   padding-left: 45px;
 }
 
-/* line 89, ../../views/sass/_columns.sass */
+/* line 91, ../../views/sass/_columns.sass */
 .bla {
   width: 1125px;
   overflow: hidden;

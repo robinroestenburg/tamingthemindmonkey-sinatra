@@ -8,9 +8,9 @@
     float:          right
 
   .column
+    +inline-block
     color:          #6f6f6f
     line-height:    22px
-    float: left
 
     h2
       color: #6e6e6e
@@ -34,7 +34,6 @@
         padding: 0
 
       .about
-        +inline-block
         width: 200px
         margin: 0
 
@@ -56,32 +55,35 @@
 
 
   .column.list
-    float: left
+    vertical-align: top
     width: 880px
 
     .decoration
       width: 880px
 
     .ttmm
+      +inline-block
       margin-bottom: 15px
+
       .monkey-logo
+        +inline-block
         width: 100px
-        float: left
         background-image: url('/images/monkey_100x100_grayscale.png')
         height: 130px
         background-repeat: no-repeat
         background-position: center
 
       .text
-        float: right
+        +inline-block
         width: 520px
-        margin-right: 230px
+        padding-left: 15px
 
         h2
           text-align: center
 
   .column.boo
-    float: right
+    padding-left: 10px
+    vertical-align: top
 
   .social
     padding-left: 45px
