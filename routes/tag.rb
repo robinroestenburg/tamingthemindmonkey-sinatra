@@ -7,7 +7,7 @@ class TamingTheMindMonkey < Sinatra::Application
   end
 
   get '/tags' do
-    @tags = Tag.all
+    @tags = Tag.all.sort { |a, b| a <=> b }
 
     haml :tags
   end

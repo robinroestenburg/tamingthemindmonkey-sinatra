@@ -1,8 +1,9 @@
-%h3.headline= "Tags"
+.post-list
+  %h2 Tags
 
-- if @tags.any?
-  %ul.bullet-list
-    - @tags.each do |tag|
-      %li
-        %span.name
-          %a{:href => "/tag/#{tag}"}= tag
+  - if @tags.any?
+    %ul.bullet-list
+      - @tags.each do |tag|
+        %li
+          %span.title
+            %a{:href => "/tag/#{tag}"}= tag
