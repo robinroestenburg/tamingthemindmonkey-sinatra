@@ -15,6 +15,7 @@ First, I added the color to the test fixtures and updated the `assert_card_equal
 
 So far, all attributes could be scraped from the details page of a card. The color of a card is only shown on the checklist page though.
 ![Color of card only present on checklist](http://farm7.static.flickr.com/6080/6090373088_91309326bd.jpg)
+
 This is a bit of a problem, because the scraper only uses the checklist page to retrieve an array of card identifiers to use when scraping the actual **Card**-object + details from the details page.
 
 ### Implementation issues
