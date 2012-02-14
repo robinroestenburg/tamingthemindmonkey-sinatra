@@ -31,6 +31,7 @@
       h3
         color: #6e6e6e
         margin: 0
+        margin-bottom: 10px
         padding: 0
 
       .about
@@ -38,7 +39,9 @@
         margin: 0
 
         .profile
-          margin-bottom: 15px
+
+          .follow
+            margin-left: 35px
 
     .wall
       margin-left: 40px
@@ -52,7 +55,19 @@
       width: 230px
       margin-bottom: 15px
 
+    .monkey-logo
+      width: 230px
+      background-image: url('/images/monkey_100x100_grayscale.png')
+      height: 130px
+      background-repeat: no-repeat
+      background-position: center
 
+    .ttmm
+      width: 230px
+      margin-bottom: 15px
+
+      h5
+        text-align: center
 
   .column.list
     vertical-align: top
@@ -61,27 +76,7 @@
     .decoration
       width: 880px
 
-    .ttmm
-      +inline-block
-      margin-bottom: 15px
-
-      .monkey-logo
-        +inline-block
-        width: 100px
-        background-image: url('/images/monkey_100x100_grayscale.png')
-        height: 130px
-        background-repeat: no-repeat
-        background-position: center
-
-      .text
-        +inline-block
-        width: 520px
-        padding-left: 15px
-
-        h2
-          text-align: center
-
-  .column.boo
+  .column.info
     padding-left: 10px
     vertical-align: top
 

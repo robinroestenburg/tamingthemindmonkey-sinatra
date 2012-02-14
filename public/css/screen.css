@@ -160,99 +160,69 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .columns .column .inset h3 {
   color: #6e6e6e;
   margin: 0;
+  margin-bottom: 10px;
   padding: 0;
 }
-/* line 36, ../../views/sass/_columns.sass */
+/* line 37, ../../views/sass/_columns.sass */
 .columns .column .inset .about {
   width: 200px;
   margin: 0;
 }
-/* line 40, ../../views/sass/_columns.sass */
-.columns .column .inset .about .profile {
-  margin-bottom: 15px;
-}
 /* line 43, ../../views/sass/_columns.sass */
+.columns .column .inset .about .profile .follow {
+  margin-left: 35px;
+}
+/* line 46, ../../views/sass/_columns.sass */
 .columns .column .wall {
   margin-left: 40px;
   width: 190px;
   margin-bottom: 15px;
   position: relative;
 }
-/* line 49, ../../views/sass/_columns.sass */
+/* line 52, ../../views/sass/_columns.sass */
 .columns .column .other {
   text-align: center;
   position: relative;
   width: 230px;
   margin-bottom: 15px;
 }
-/* line 57, ../../views/sass/_columns.sass */
-.columns .column.list {
-  vertical-align: top;
-  width: 880px;
-}
-/* line 61, ../../views/sass/_columns.sass */
-.columns .column.list .decoration {
-  width: 880px;
-}
-/* line 64, ../../views/sass/_columns.sass */
-.columns .column.list .ttmm {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  margin-bottom: 15px;
-}
-/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.columns .column.list .ttmm {
-  *display: inline;
-}
-/* line 68, ../../views/sass/_columns.sass */
-.columns .column.list .ttmm .monkey-logo {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  width: 100px;
+/* line 58, ../../views/sass/_columns.sass */
+.columns .column .monkey-logo {
+  width: 230px;
   background-image: url("/images/monkey_100x100_grayscale.png");
   height: 130px;
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.columns .column.list .ttmm .monkey-logo {
-  *display: inline;
+/* line 65, ../../views/sass/_columns.sass */
+.columns .column .ttmm {
+  width: 230px;
+  margin-bottom: 15px;
 }
-/* line 76, ../../views/sass/_columns.sass */
-.columns .column.list .ttmm .text {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  width: 520px;
-  padding-left: 15px;
-}
-/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p290@sinatra-blog/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.columns .column.list .ttmm .text {
-  *display: inline;
-}
-/* line 81, ../../views/sass/_columns.sass */
-.columns .column.list .ttmm .text h2 {
+/* line 69, ../../views/sass/_columns.sass */
+.columns .column .ttmm h5 {
   text-align: center;
 }
-/* line 84, ../../views/sass/_columns.sass */
-.columns .column.boo {
+/* line 72, ../../views/sass/_columns.sass */
+.columns .column.list {
+  vertical-align: top;
+  width: 880px;
+}
+/* line 76, ../../views/sass/_columns.sass */
+.columns .column.list .decoration {
+  width: 880px;
+}
+/* line 79, ../../views/sass/_columns.sass */
+.columns .column.info {
   padding-left: 10px;
   vertical-align: top;
 }
-/* line 88, ../../views/sass/_columns.sass */
+/* line 83, ../../views/sass/_columns.sass */
 .columns .social {
   padding-left: 45px;
 }
 
-/* line 91, ../../views/sass/_columns.sass */
+/* line 86, ../../views/sass/_columns.sass */
 .bla {
   width: 1125px;
   overflow: hidden;

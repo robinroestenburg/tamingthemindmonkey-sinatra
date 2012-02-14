@@ -13,6 +13,7 @@
     %link{:rel => "stylesheet", :href => "/css/colorbox.css"}
     %link{:rel => "stylesheet", :href => "/css/nivo-slider.css" }
     %link{:rel => "stylesheet", :href => "/css/nivo-style.css" }
+    %link{:rel => "stylesheet", :href => "http://coderwall.com/stylesheets/jquery.coderwall.css"}
 
     %script{:type => "text/javascript", :src => "/javascripts/jquery-1.6.2.js"}
     %script{:type => "text/javascript", :src => "/javascripts/cufon-yui.js"}
@@ -25,6 +26,8 @@
     %script{:type => "text/javascript", :src => "/javascripts/contact.js"}
     %script{:type => "text/javascript", :src => "/javascripts/jquery.tipsy.js"}
     %script{:type => "text/javascript", :src => "/javascripts/custom.js"}
+    %script{:type => "text/javascript", :src => "http://coderwall.com/javascripts/jquery.coderwall.js"}
+
 
     %script{:type => "text/javascript", :src => "/javascripts/google-analytics.js"}
 
@@ -48,55 +51,39 @@
         .columns
           .column.list
 
-            .ttmm
-              .monkey-logo
-
-              .text
-                %h2 Taming the Mind Monkey
-                %em Mind monkey
-                is a Buddhist term meaning (amongst other things) "restless, uncontrollable".
-                %br
-                I have a monkey mind, it is always in need of new information.
-
-                Everyday I read and practice new (to me anyway) things related to programming and software development in general...
-                %br
-                \...and I blog about it.
-              .bla
-            .decoration
             =yield
 
-          .column.boo
+          .column.info
+
+            .monkey-logo
+
+            .ttmm
+              %h5 Mind monkey is a Buddhist term meaning (amongst other things) "restless, uncontrollable".
+
             .inset
               .about
                 .profile
-                  %h2 whoami
+                  %h3 About me
                   %img{:valign => "middle", :src => '/images/Robin.jpg', :width => "70px", :class => "column-image"}
                   My name is Robin Roestenburg. I'm a boyfriend, dad and software engineer (Ruby, Java) from the Netherlands.
+                  %br
+                  %br
+                  I have a monkey mind, and I feed it by reading, practicing
+                  and blogging about new (to me anyway) things related to
+                  programming and software development.
                   %br
                   %br
                   .follow
                     <a href="https://twitter.com/robinroest" class="twitter-follow-button" data-show-count="false">Follow @robinroest</a>
                     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-                  -# %br
-                  -# %br
-                  -# This is is my development blog on which I blog about all things related to programming &amp; software development.
-                  %br
-                  You can find out more about me on my home page:
-                  %a{href: "http://www.robinroestenburg.com"}
-                    http://www.robinroestenburg.com
-
             .wall
-              <!-- Add these tags to the HEAD section of your page. -->
-              <link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-              <script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
-
-              <!-- You also need to place a container where you'd like the Coderwall badges to render. -->
               <section class="coderwall" data-coderwall-username="robinroestenburg" data-coderwall-orientation="vertical"></section>
               .bla
 
             .other
-              %img{:valign => "middle", :src => '/images/railsberry_im_in-medium.jpg'}
+              %a{href: 'http://www.railsberry.com', alt: 'railsberry, a sweet european rails conference', target: 'new'}
+                %img{:valign => "middle", :src => '/images/railsberry_im_in-medium.jpg'}
 
         .clear
         .decoration
