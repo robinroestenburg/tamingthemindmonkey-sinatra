@@ -5,6 +5,7 @@ class Tag
   end
 
   def self.all
-    Post.all_posts.map(&:tags).flatten.uniq
+    Post.all_posts.map(&:tags).flatten.uniq.sort
   end
+
 end
