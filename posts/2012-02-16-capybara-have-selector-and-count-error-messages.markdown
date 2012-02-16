@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Capybara: have_selector and :count error messages"
-tags: capybara cucumber rails
+tags: capybara
 author: Robin Roestenburg
 published_at: "2012-02-16"
 ---
