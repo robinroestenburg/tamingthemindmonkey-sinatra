@@ -1,27 +1,31 @@
 .post-list
-  %h2.column-heading Recent posts
-
   - if @posts.any?
-    %ul.bullet-list
+    - @posts.each do |year, posts_by_year|
 
-      %li
-        %span.title
-          %strong Title
-        %span.posted_at
-          %strong Posted at
-        %span.tags
-          %strong Tags
+      %h2= year
 
-        - @posts.each do |post|
+      - posts_by_year.each do |month, posts|
+        %h3= Date.new(year, month).strftime('%B')
+        %ul.bullet-list
+
           %li
             %span.title
-              %a{:href => "/#{post.permalink}"}= post.title
+              %strong Title
             %span.posted_at
-              = post.published_at.strftime('%B %d, %Y')
+              %strong Posted at
             %span.tags
-              - post.tags.each_with_index do |tag, index|
-                - if post.tags.length - 1 == index
-                  %a{:href => "/tag/#{tag}"}>= tag
-                - else
-                  %a{:href => "/tag/#{tag}"}>= tag
-                  ,&nbsp;
+              %strong Tags
+
+          - posts.each do |post|
+            %li
+              %span.title
+                %a{:href => "/#{post.permalink}"}= post.title
+              %span.posted_at
+                = post.published_at.strftime('%B %d, %Y')
+              %span.tags
+                - post.tags.each_with_index do |tag, index|
+                  - if post.tags.length - 1 == index
+                    %a{:href => "/tag/#{tag}"}>= tag
+                  - else
+                    %a{:href => "/tag/#{tag}"}>= tag
+                    ,&nbsp;

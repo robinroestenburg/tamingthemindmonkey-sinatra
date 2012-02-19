@@ -87,6 +87,15 @@ class Post
     all_posts.select { |post| post.published_at.year == year && post.published_at.month == month }
   end
 
+  def self.grouped_by_year_and_month
+    Hash[
+      all_posts.
+        group_by { |post| post.published_at.year }.
+        collect do |year, posts_by_year|
+          [ year, posts_by_year.group_by { |post| post.published_at.month } ]
+        end]
+  end
+
   def self.all_posts
     Dir.new(POSTS_DIR).
       select { |file_name| file_name != '.' &&  file_name != '..' }.
