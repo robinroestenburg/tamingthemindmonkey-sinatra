@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby: Grouping to two-dimensional Hash"
-tags: ruby tips
+tags: ruby howto
 author: Robin Roestenburg
 published_at: "2012-02-19"
 ---
@@ -80,42 +80,58 @@ example:
 ~~~
 
 In the above example I only referenced the array as a whole (by `grouped_posts`). In order to
-preserve the year of the posts I can have the `collect` method return a hash containing the year and
+preserve the year of the posts I can have the `collect` method return a array containing the year and
 the list of posts for that year grouped by month:
 
 ~~~ text
->> grouped_posts = posts.group_by(&:year).collect { |year, posts_by_year| { year => posts_by_year.group_by(&:month) } }
-=> [{2011=>
+>> grouped_posts = posts.group_by(&:year).collect { |year, posts_by_year| [year, posts_by_year.group_by(&:month)] }
+=> [[2011,
      {1=>
        [#<struct Post year=2011, month=1, filename="Foo">,
         #<struct Post year=2011, month=1, filename="Bar">],
-      2=>[#<struct Post year=2011, month=2, filename="Baz">]}},
-    {2012=>{1=>[#<struct Post year=2012, month=1, filename="Quux">]}}]
+      2=>[#<struct Post year=2011, month=2, filename="Baz">]}],
+    [2012, {1=>[#<struct Post year=2012, month=1, filename="Quux">]}]]
 ~~~
 
 For readability, I replaced the verbose `group_by` calls using a block by the more condensed
 variant in above example.
 
-Even closer! I can now access the posts of January 2011 as follows: `grouped_posts[0][2011][1]`.
-I only have to get rid of the outer array which is enclosing the nested Hash containing the
-grouped posts.
+I can now access the posts of January 2011 as follows: `grouped_posts[0][1][1]`. Does not look that
+good yet :)
+
+**Note:** I could have returned a hash instead of an array here and it would have allowed me to
+retrieve the posts as follows `grouped_posts[0][2011][1]`. I did try this at first, but I ran into
+problems converting the array to hash, see the next section for more information.
 
 #### Converting Array to Hash
-This turned out to be really easy, by just fetching the first element of the returned array (there
-is only one element).
+This turned out to be really easy, as there is a `[]`-method on Ruby's `Hash` class which takes an
+array of key-value pairs or an object convertible to a hash, and returns a hash.
 
-The end result looks like this:
+The example in the documentation shows the solution for my problem:
 
 ~~~ ruby
-def grouped_by_year_and_month
-  all_posts.
-    group_by(&:year).
-    collect do |year, posts_by_year|
-      { year => posts_by_year.group_by(&:month) }
-    end.first
-end
+Hash[ [ ["a", 100], ["b", 200] ] ]   #=> {"a"=>100, "b"=>200}
 ~~~
 
-That's about it, check out the result on the [frontpage](/).
+As you can see the `[]`-method strips out the surrounding array(s) which I need to get rid of the
+remaining outer array. As bonus it automatically converts the `[year, posts]`-arrays inside it to
+a Hash.
+
+**Note about the note above:** When used on the hash variant this method would not detect
+a key-value pair and return an empty hash as a result.
+
+~~~ text
+>> grouped_posts = Hash[posts.group_by(&:year).collect { |year, posts_by_year| [year, posts_by_year.group_by(&:month)] }]
+=> {2011=>
+    {1=>
+      [#<struct Post year=2011, month=1, filename="Foo">,
+       #<struct Post year=2011, month=1, filename="Bar">],
+     2=>[#<struct Post year=2011, month=2, filename="Baz">]}},
+   {2012=>{1=>[#<struct Post year=2012, month=1, filename="Quux">]}}
+~~~
+
+That's about it, `grouped_posts[2011][1]` now returns the posts of January 2011.
+
+Check out the end result on the [frontpage](/).
 
 
