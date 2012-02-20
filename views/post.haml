@@ -44,10 +44,12 @@
 
     #disqus_thread
 
+
     %script{:type => "text/javascript"}
-      var disqus_developer = 1; // (/localhost|github|dev/i).test(location.host);
-      var disqus_shortname = 'tamingthemindmonkey';
-      -#//    var disqus_identifier =
+      var disqus_url        = "http://www.tamingthemindmonkey.com/#{@post.permalink}";
+      var disqus_shortname  = 'tamingthemindmonkey';
+      var disqus_title      = "#{@post.title}";
+
       (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
