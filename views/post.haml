@@ -10,12 +10,8 @@
         %li.user-posted= @post.author
         - if @post.tags
           %li.tags-posted
-            - @post.tags.each_with_index do |tag, index|
-              - if @post.tags.length - 1 == index
-                %a{:href => "/tag/#{tag}"}>= tag
-              - else
-                %a{:href => "/tag/#{tag}"}>= tag
-                ,&nbsp;
+            = partial :tag_list, :locals => { :tags => @post.tags }
+
         -# %li.comments-posted 12 Comments
         %li.more-posted
           %a{:href => "/"} Back home

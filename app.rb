@@ -8,43 +8,6 @@ require 'haml'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
-
-# class Post
-#   include DataMapper::Resource
-#
-#   has n, :post_tags
-#   has n, :tags, :through => :post_tags
-#
-#   property :id,           Serial
-#   property :title,        String
-#   property :body,         Text
-#   property :created_at,   DateTime
-#   property :published_at, DateTime
-# end
-#
-# class Tag
-#   include DataMapper::Resource
-#
-#   has n, :post_tags
-#   has n, :posts,      :through => :post_tags
-#
-#   property :id,           Serial
-#   property :name,         String
-# end
-#
-# class PostTag
-#   include DataMapper::Resource
-#
-#   property :id,         Serial
-#   property :created_at, DateTime
-#
-#   belongs_to :tag
-#   belongs_to :post
-# end
-#
-# DataMapper.auto_migrate!
-#
-#
 class TamingTheMindMonkey < Sinatra::Application
   # enable :sessions
 
