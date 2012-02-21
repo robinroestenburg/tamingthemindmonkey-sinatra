@@ -14,10 +14,4 @@
           %strong Tags
 
         - @posts.each do |post|
-          %li
-            %span.title
-              %a{:href => "/#{post.permalink}"}= post.title
-            %span.posted_at
-              = post.published_at.strftime('%B %d, %Y')
-            %span.tags
-              = partial :tag_list, :locals => { :tags => post.tags }
+          = partial :post_list_row, :locals => { :post => post }
