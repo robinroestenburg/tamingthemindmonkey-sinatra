@@ -106,3 +106,6 @@ handling code and probably be able to create a connection to my database.
 
 Ugh, that was a big blob of words. I am getting closer to where I want to be
 though. 
+
+**I've posted the code example for this blog post on Github, check it out
+[here](https://github.com/robinroestenburg/digging-into-rails/tree/master/002-closer-look-at-activerecord-initialization).**
