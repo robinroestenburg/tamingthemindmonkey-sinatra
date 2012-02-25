@@ -2,6 +2,7 @@
 layout: post 
 title: "Digging into Rails: Closer look at Active Record initialization" 
 author: Robin Roestenburg 
+tags: rails activerecord mychain 
 published_at: "2012-02-25" 
 ---
 

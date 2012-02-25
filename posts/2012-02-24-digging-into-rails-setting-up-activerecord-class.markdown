@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Digging into Rails: Setting up a ActiveRecord class"
-tags: rails mychain
+tags: rails mychain activerecord
 author: Robin Roestenburg
 published_at: "2012-02-24"
 ---
