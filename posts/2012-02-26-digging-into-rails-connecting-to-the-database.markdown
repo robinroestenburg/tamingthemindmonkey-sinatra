@@ -35,8 +35,8 @@ pool can be retrieved for the class and
 will return nil which generates our error as you can see in the last line.
 
 ### Establishing a connection
-So, now the question is - how do initialize the connection handler in such a way
-that there is at least one connection pool present? 
+So, now the question is - how do we initialize the connection handler in such a
+way that there is at least one connection pool present? 
 
 The connection pool for a particular class is retrieved by looking up the class
 in a hash containing names of the classes and connection pools as (key,
@@ -44,7 +44,7 @@ value)-pairs. I decided to check which methods added to this hash. There were a
 couple, but only one I had not seen yet,
 `ConnectionHandler#establish_connection`. 
 
-This method on its was not helping me find an answer, but when I checked the
+This method on its own was not helping me find an answer, but when I checked the
 methods that called it I did. It is called by the
 `ConnectionHandling.establish_connection` class method (subtle difference). This 
 method contains a big comment, describing how to initialize Active Record by
@@ -98,7 +98,7 @@ TL;DR: I now included `ActiveRecord::Model` and did not inherit from
 and I unlocked a new error - yay! 
 
 As I do not want to inherit from `ActiveRecord::Base`, I called the
-`establish_connection` class on the `ActiveRecord::Model` module to see if that
+`establish_connection` method on the `ActiveRecord::Model` module to see if that
 works. This also works (as in: it produces the same new error), I will stick 
 with this - as it will automatically provide a database connection for all
 classes including `ActiveRecord::Model`.  
