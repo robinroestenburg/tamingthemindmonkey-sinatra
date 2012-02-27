@@ -117,3 +117,5 @@ sense.
 Tomorrow I will continue with the example and see if I can get Active Record to
 determine the attributes on my table. 
 
+**I've posted the code example for this blog post on Github, check it out
+[here](https://github.com/robinroestenburg/digging-into-rails/tree/master/003-connecting-to-the-database).**
