@@ -76,8 +76,9 @@ OldMonkey.establish_connection(
 #### Testing the database connections
 Next, I will make sure I can retrieve the data from the old database using the
 `OldMonkey` model. I set a custom table name (for more on table names, click
-[here]()) to be able to access the `_6d6f6e6b657973` table and then I should be
-able to retrieve the data from that database.
+[here](/2012/02/28/activerecord-using-multiple-databases)) to be able to access
+the `_6d6f6e6b657973` table and then I should be able to retrieve the data from
+that database.
 
 ~~~ ruby
 class OldMonkey
@@ -121,7 +122,7 @@ A couple of notes:
 * I've added the name method which wraps around the `_6e616d65` attribute on the
   `OldMonkey` class for clarity of the example. 
 * Decoding the hexadecimal string is done using Ruby's `pack`- method, check it
-  out [here]().
+  out [here](http://ruby-doc.org/core-1.9.3/Array.html#method-i-pack).
 
 Let's take a look at the contents of the `monkeys` table before and after
 running the example: 
