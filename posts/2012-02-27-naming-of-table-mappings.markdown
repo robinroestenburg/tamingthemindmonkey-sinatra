@@ -1,8 +1,9 @@
 --- 
 layout: post 
-title: "Digging into Rails: Naming of table mappings" 
+title: "ActiveRecord: Naming of table mappings" 
 author: Robin Roestenburg 
 tags: rails activerecord mychain 
+chain: "Digging into Rails"
 published_at: "2012-02-27" 
 ---
 Yesterday I managed to get the connection to the database
