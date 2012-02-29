@@ -72,19 +72,12 @@ class Post
     Post.build(file_name)
   end
 
-  def self.find_most_recent
-    all_posts[0..10]
-  end
-
   def self.find_by_year(year)
-    all_posts.
-      select { |post| post.published_at.year == year }.
-      group_by { |post| post.published_at.month }
-
+    grouped_by_year_and_month[year]
   end
 
   def self.find_by_month(year, month)
-    all_posts.select { |post| post.published_at.year == year && post.published_at.month == month }
+    grouped_by_year_and_month[year][month]
   end
 
   def self.grouped_by_year_and_month
