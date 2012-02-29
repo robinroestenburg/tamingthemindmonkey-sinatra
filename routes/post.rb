@@ -5,6 +5,7 @@ class TamingTheMindMonkey < Sinatra::Application
       file_name = "posts/#{year}-#{month}-#{day}-#{title}.markdown"
 
       @post = Post.find_by_name(file_name)
+      @title = "Taming the Mind Monkey - #{@post.title}"
       haml :post
 
     rescue
@@ -19,6 +20,7 @@ class TamingTheMindMonkey < Sinatra::Application
 
       @month  = Date.new(year, month)
       @posts  = Post.find_by_month(year, month)
+      @title  = "Taming the Mind Monkey - Archive #{year}-#{month}"
       haml :month
     rescue
       pass # Show the year overview.
@@ -28,6 +30,7 @@ class TamingTheMindMonkey < Sinatra::Application
   get %r{/([\d]+)} do |year|
     @year   = year.to_i
     @months  = Post.find_by_year(@year)
+    @title  = "Taming the Mind Monkey - Archive #{year}"
     haml :year
   end
 
