@@ -4,7 +4,7 @@ title: "ActiveRecord: Using multiple databases"
 author: Robin Roestenburg 
 tags: rails activerecord mychain 
 chain: "Digging into Rails"
-published_at: "2012-02-27" 
+published_at: "2012-02-28" 
 ---
 In a [previous post](/2012/02/26/digging-into-rails-connecting-to-the-database)
 I came across ActiveRecords ability to use a different databases for specific
@@ -29,7 +29,7 @@ ActiveRecord::Model.establish_connection(
 
 If you would like a specific class to make use of another database then just
 call `establish_connection` on this class. This will not affect the other
-databases.
+classes.
 
 ### Migrating from hexadecimal monkeys!
 Let me show you how this work with an example. Say we have an old database
@@ -150,6 +150,4 @@ That's all for today.
 
 **I've posted the code examples for this blog post on Github, check it out
 [here](https://github.com/robinroestenburg/digging-into-rails/tree/master/005-using-multiple-databases).**
-
-
 
