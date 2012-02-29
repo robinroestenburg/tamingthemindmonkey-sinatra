@@ -17,7 +17,7 @@ monkey
 
 I have [looked]() at how Active Record knows in what database table to store the
 data, but I have yet to look at how the database column `name` is mapped to an
-atribute of the `Monkey` class. The `Monkey` class code does not contain it: 
+attribute of the `Monkey` class. The `Monkey` class code does not contain it: 
 
 ~~~ ruby
 class Monkey
