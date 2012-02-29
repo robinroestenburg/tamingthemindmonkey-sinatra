@@ -1,6 +1,6 @@
 --- 
 layout: post 
-title: "ActiveRecord: Initialisation of attributes on class"
+title: "ActiveRecord: Initialization of attributes on class"
 author: Robin Roestenburg 
 tags: rails activerecord mychain 
 chain: "Digging into Rails"
