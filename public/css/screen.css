@@ -78,15 +78,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 10, ../../views/sass/_post_list.sass */
 .post-list ul {
   margin-right: 0;
+  margin-top: 0;
   list-style: none;
   padding-left: 0;
 }
-/* line 17, ../../views/sass/_post_list.sass */
+/* line 18, ../../views/sass/_post_list.sass */
 .post-list span {
   position: relative;
   display: inline-block;
 }
-/* line 21, ../../views/sass/_post_list.sass */
+/* line 22, ../../views/sass/_post_list.sass */
 .post-list span.title {
   white-space: nowrap;
   overflow: hidden;
@@ -95,11 +96,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-overflow: ellipsis;
   width: 450px;
 }
-/* line 25, ../../views/sass/_post_list.sass */
+/* line 26, ../../views/sass/_post_list.sass */
 .post-list span.posted_at {
   width: 150px;
 }
-/* line 28, ../../views/sass/_post_list.sass */
+/* line 29, ../../views/sass/_post_list.sass */
 .post-list span.tags {
   width: 250px;
 }
