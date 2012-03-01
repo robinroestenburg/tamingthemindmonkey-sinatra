@@ -23,7 +23,7 @@ $monaco:    monaco, "lucida console", "dejavu sans mono", "bitstream vera sans m
 @import _columns
 @import _footer
 
-$blueprint-font-family: Arial, Helvetica, sans-serif
+$blueprint-font-family: Helvetica, Arial, sans-serif
 $blueprint-fixed-font-family: $monaco
 
 +establish-baseline(12px)
@@ -34,11 +34,14 @@ body
   +blueprint-typography(true)
   background-repeat: repeat
 
-  // a
-  //   color: #e44d26
+  ul
+    margin-top: -1.5em
 
-  //   &:visited
-  //     color: #e44d26
+  code
+    background-color: #f8f8f8
+    border: 1px solid #eaeaea
+    margin: 0 2px
+    padding: 0 5px
 
   .decoration
     margin-bottom: 15px
@@ -97,21 +100,20 @@ body
             border: 1px solid rgb(110, 110, 110)
 
       .highlight
-        +border-radius(5px)
-        background-image: url('/images/background/pattern/pat1.png')
-        background-repeat: repeat
+        +border-radius(3px)
         margin-bottom: 1.5em
 
         pre
-          +border-radius(5px)
-          +box-shadow(rgba(#000, .3) 0 0 5px 1px inset)
-          margin: 0
-          padding-left: 10px
-          padding-right: 10px
-          padding-top: 5px
-          padding-bottom: 5px
+          +border-radius(3px)
           font-family: $monaco
-          overflow-x: auto
+          overflow: auto
+          background-color: #f8f8f8
+          border: 1px solid #ccc
+          padding: 6px 10px 
+
+          .lineno
+            color: #aaa
+          
 
     .navigation
       margin-bottom: 5px

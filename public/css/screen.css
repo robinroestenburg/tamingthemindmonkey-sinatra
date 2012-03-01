@@ -257,7 +257,7 @@ html > body {
 /* line 33, ../../views/sass/screen.sass */
 body {
   line-height: 1.5;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #333333;
   font-size: 75%;
   background-repeat: repeat;
@@ -452,20 +452,31 @@ body .quiet {
 body .loud {
   color: #111111;
 }
-/* line 43, ../../views/sass/screen.sass */
+/* line 37, ../../views/sass/screen.sass */
+body ul {
+  margin-top: -1.5em;
+}
+/* line 40, ../../views/sass/screen.sass */
+body code {
+  background-color: #f8f8f8;
+  border: 1px solid #eaeaea;
+  margin: 0 2px;
+  padding: 0 5px;
+}
+/* line 46, ../../views/sass/screen.sass */
 body .decoration {
   margin-bottom: 15px;
 }
-/* line 46, ../../views/sass/screen.sass */
+/* line 49, ../../views/sass/screen.sass */
 body .blog-item {
   color: #6f6f6f;
 }
-/* line 49, ../../views/sass/screen.sass */
+/* line 52, ../../views/sass/screen.sass */
 body .blog-item .blog-heading {
   color: #6e6e6e;
   margin-bottom: 0.5em;
 }
-/* line 53, ../../views/sass/screen.sass */
+/* line 56, ../../views/sass/screen.sass */
 body .blog-item ul.post-details {
   width: 100%;
   position: relative;
@@ -475,7 +486,7 @@ body .blog-item ul.post-details {
   display: block;
   padding-left: 0;
 }
-/* line 62, ../../views/sass/screen.sass */
+/* line 65, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li {
   background-repeat: no-repeat;
   background-position: 0px 4px;
@@ -484,31 +495,31 @@ body .blog-item ul.post-details li {
   padding-top: 2px;
   padding-right: 15px;
 }
-/* line 70, ../../views/sass/screen.sass */
+/* line 73, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.tags-posted {
   background-image: url("/images/blog-lists/tags.png");
 }
-/* line 73, ../../views/sass/screen.sass */
+/* line 76, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.time-posted {
   background-image: url("/images/blog-lists/clock.png");
 }
-/* line 76, ../../views/sass/screen.sass */
+/* line 79, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.user-posted {
   background-image: url("/images/blog-lists/user.png");
 }
-/* line 79, ../../views/sass/screen.sass */
+/* line 82, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.comments-posted {
   background-image: url("/images/blog-lists/comments.png");
 }
-/* line 82, ../../views/sass/screen.sass */
+/* line 85, ../../views/sass/screen.sass */
 body .blog-item ul.post-details li.more-posted {
   background-image: url("/images/blog-lists/more.png");
 }
-/* line 88, ../../views/sass/screen.sass */
+/* line 91, ../../views/sass/screen.sass */
 body .blog-item .blog-content .thumbnail-wrapper {
   text-align: center;
 }
-/* line 90, ../../views/sass/screen.sass */
+/* line 93, ../../views/sass/screen.sass */
 body .blog-item .blog-content .thumbnail-wrapper .thumbnail {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -523,77 +534,73 @@ body .blog-item .blog-content .thumbnail-wrapper .thumbnail {
 body .blog-item .blog-content .thumbnail-wrapper .thumbnail {
   *display: inline;
 }
-/* line 96, ../../views/sass/screen.sass */
+/* line 99, ../../views/sass/screen.sass */
 body .blog-item .blog-content .thumbnail-wrapper .thumbnail img {
   border: 1px solid #6e6e6e;
 }
-/* line 99, ../../views/sass/screen.sass */
+/* line 102, ../../views/sass/screen.sass */
 body .blog-item .blog-content .highlight {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  background-image: url("/images/background/pattern/pat1.png");
-  background-repeat: repeat;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
   margin-bottom: 1.5em;
 }
-/* line 105, ../../views/sass/screen.sass */
+/* line 106, ../../views/sass/screen.sass */
 body .blog-item .blog-content .highlight pre {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 1px inset;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 1px inset;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 1px inset;
-  margin: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
   font-family: monaco, "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monospace;
-  overflow-x: auto;
+  overflow: auto;
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  padding: 6px 10px;
 }
-/* line 116, ../../views/sass/screen.sass */
+/* line 114, ../../views/sass/screen.sass */
+body .blog-item .blog-content .highlight pre .lineno {
+  color: #aaaaaa;
+}
+/* line 118, ../../views/sass/screen.sass */
 body .blog-item .navigation {
   margin-bottom: 5px;
 }
-/* line 119, ../../views/sass/screen.sass */
+/* line 121, ../../views/sass/screen.sass */
 body .blog-item .navigation .decoration {
   margin-bottom: 5px;
 }
-/* line 122, ../../views/sass/screen.sass */
+/* line 124, ../../views/sass/screen.sass */
 body .blog-item .navigation .previous {
   width: 440px;
   display: table-cell;
 }
-/* line 126, ../../views/sass/screen.sass */
+/* line 128, ../../views/sass/screen.sass */
 body .blog-item .navigation .previous img {
   vertical-align: middle;
   margin-right: 5px;
 }
-/* line 129, ../../views/sass/screen.sass */
+/* line 131, ../../views/sass/screen.sass */
 body .blog-item .navigation .next {
   text-align: right;
   width: 440px;
   display: table-cell;
 }
-/* line 134, ../../views/sass/screen.sass */
+/* line 136, ../../views/sass/screen.sass */
 body .blog-item .navigation .next img {
   vertical-align: middle;
   margin-left: 5px;
 }
-/* line 137, ../../views/sass/screen.sass */
+/* line 139, ../../views/sass/screen.sass */
 body .blog-item .navigation h4 {
   display: inline;
 }
 
-/* line 140, ../../views/sass/screen.sass */
+/* line 142, ../../views/sass/screen.sass */
 .footer-socials {
   width: 80px;
 }

@@ -9,7 +9,7 @@ published_at: "2012-02-29"
 I have been figuring out what Rails, and specifically Active Record, is doing
 behind-the-scenes with the following (simple) example:
 
-~~~ ruby
+~~~ ruby,showlinenos
 monkey = Monkey.new
 monkey.name = 'George'
 monkey
@@ -19,7 +19,7 @@ I have [looked]() at how Active Record knows in what database table to store the
 data, but I have yet to look at how the database column `name` is mapped to an
 attribute of the `Monkey` class. The `Monkey` class code does not contain it: 
 
-~~~ ruby
+~~~ ruby,showlinenos
 class Monkey
   include ActiveRecord::Model
 end
@@ -33,7 +33,7 @@ This is going to be a difficult piece to write. I'll try my best, but I don't
 expect everyone to reach the end ;-) Let's take another look at the `initialize`
 method in the `ActiveRecord::Core` module.
 
-~~~ ruby
+~~~ ruby,showlinenos
 def initialize(attributes = nil, options = {})
   @attributes = self.class.initialize_attributes(self.class.column_defaults.dup)
   @columns_hash = self.class.column_types.dup
