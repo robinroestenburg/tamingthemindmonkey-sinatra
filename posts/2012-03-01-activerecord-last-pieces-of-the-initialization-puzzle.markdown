@@ -53,8 +53,8 @@ end
   they are missing. This is actually not used for initialization, probably for
   performance reasons - but it would have made more sense to just leave it to
   that method.
-* In my opinion, it would have been a whole lot easier to just add the call to
-  the `define_attribute_methods` method from the
+* I think it would have been a whole lot easier to just add the call to the
+  `define_attribute_methods` method from the
   `ActiveRecord::AttributeMethods#respond_to?` method to the
   `ActiveRecord::Core#initialize` method. 
 
@@ -78,8 +78,7 @@ present on a Active Model (where you explicitly call this method).
 #### Super into included modules
 The `super` call on line 8 (in the code example) goes through the included
 modules for the `define_attribute_methods` method taking 1 parameter. I did not
-understand this at first, but after I created a small example it became more
-clear:
+understand this at first, but after I created a small example it became clearer:
 
 ~~~ ruby,showlinenos
 module B
