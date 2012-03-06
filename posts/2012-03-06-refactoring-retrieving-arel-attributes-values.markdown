@@ -6,8 +6,8 @@ tags: rails activerecord refactoring
 published_at: "2012-03-06" 
 ---
 I showed this refactoring in the original post from yesterday, but I wanted to
-explain the process of how I got to the end result in a separate post. Let's
-look at the original code again:
+explain the process of how I got to the result in a separate post. Let's look at
+the original code again:
 
 ~~~ ruby,showlinenos
 def arel_attributes_values(include_primary_key = true, include_readonly_attributes = true, attribute_names = @attributes.keys)
@@ -36,8 +36,8 @@ end
 
 As you can see it is overly complex; some of the things I do not like:
 
-* the double nested if-structure which is checking for primary keys and readonly
-  attributes,
+* the double nested if-structure which is checking for primary keys and read
+  only attributes,
 * the if-else case inside the assignment of the value variable,
 * the flag parameters (include_primary_key and include_readyonly_attributes)
 
@@ -170,8 +170,7 @@ end
 I kept the FIXME in there, as I did not want to shave that yak just yet ;) 
 
 ### Step 3: Cleaning up
-I did some renaming of attributes and methods and the end result looks like
-this:
+I did some renaming of attributes and methods and the result looks like this:
 
 ~~~ ruby
 def arel_attributes_values(pk_attr_allowed = true, readonly_attr_allowed = true, attribute_names = @attributes.keys)
@@ -217,13 +216,10 @@ end
 ~~~
 
 I did not touch the parameters of the method because I do not know how much
-effort it would take right now (don't want to shave that yak either!). 
-
-I would like to make the `column_for_attribute` a little bit smarter, so I could
-have this part of the code be a bit simple. Or I could add detection of a
-readonly attributes to the column class so I could make the code more generic.
+effort it would take right now (don't want to shave that yak either!). I would
+like to refactor this next.
 
 The main goal of this refactoring was to get rid of the nested ifs and the ugly
-if-statement inside the assigment of value. I think I succeeded, I hope
+if-statement inside the assignment of value. I think I succeeded, I hope
 [they](https://github.com/rails/rails/pull/5294) like it :)
 
