@@ -2,7 +2,7 @@
 layout: post 
 title: "Refactoring: Retrieving the Arel attributes and values for create/update"
 author: Robin Roestenburg 
-tags: rails activerecord refactoring
+tags: rails activerecord refactoring mychain
 published_at: "2012-03-06" 
 ---
 I showed this refactoring in the original post from yesterday, but I wanted to

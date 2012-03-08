@@ -2,7 +2,7 @@
 layout: post 
 title: "ActiveRecord: Getting attributes ready for saving"
 author: Robin Roestenburg 
-tags: rails activerecord mychain 
+tags: rails activerecord arel mychain 
 chain: "Digging into Rails"
 published_at: "2012-03-05" 
 ---
