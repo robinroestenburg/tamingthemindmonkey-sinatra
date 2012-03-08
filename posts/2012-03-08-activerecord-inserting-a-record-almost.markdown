@@ -2,7 +2,7 @@
 layout: post 
 title: "ActiveRecord: Inserting a record (almost)"
 author: Robin Roestenburg 
-tags: rails arel mychain 
+tags: rails activerecord mychain 
 chain: "Digging into Rails"
 published_at: "2012-03-08" 
 ---
