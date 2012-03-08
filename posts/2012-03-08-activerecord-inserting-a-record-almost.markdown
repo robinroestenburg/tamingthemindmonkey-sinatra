@@ -141,7 +141,7 @@ database:
 
 In our example case, these look like this:
 
-~~~ ruby
+~~~ text
 # substitutes
 [[#<struct Arel::Attributes::Attribute relation=#<Arel::Table:0x007f9a4f2bcac8
       @name="monkeys", 
