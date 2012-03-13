@@ -7,7 +7,8 @@ chain: "Digging into Rails"
 published_at: "2012-03-13" 
 ---
 
-In [this post]() we took a first look at the `ActiveRecord::Relation#insert`
+In [this
+post](/2012/03/08/activerecord-inserting-a-record-almost) we took a first look at the `ActiveRecord::Relation#insert`
 method. We saw that it performs the following functions:
 
 1. Prefetching the primary key value if needed. 
@@ -126,7 +127,8 @@ that we discussed before is added here.
 ~~~
 
 The last line will add a column and a value for each of the entries in the
-`substitutes` array, which I discussed [here]().
+`substitutes` array, which I discussed
+[here](/2012/03/08/activerecord-inserting-a-record-almost).
 
 ~~~ text
 #<Arel::InsertManager:0x007fd184d2fc50 
