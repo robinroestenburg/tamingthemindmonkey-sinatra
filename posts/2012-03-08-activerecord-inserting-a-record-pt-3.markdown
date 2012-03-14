@@ -1,6 +1,6 @@
 --- 
 layout: post 
-title: "ActiveRecord: Inserting a record (almost)"
+title: "ActiveRecord: Inserting a record Pt. 3"
 author: Robin Roestenburg 
 tags: rails activerecord mychain 
 chain: "Digging into Rails"

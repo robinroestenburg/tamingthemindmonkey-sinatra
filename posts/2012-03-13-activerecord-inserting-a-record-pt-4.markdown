@@ -1,8 +1,8 @@
 --- 
 layout: post 
-title: "ActiveRecord: Inserting a record Pt. 2"
+title: "ActiveRecord: Inserting a record Pt. 4"
 author: Robin Roestenburg 
-tags: rails activerecord mychain 
+tags: rails activerecord arel mychain 
 chain: "Digging into Rails"
 published_at: "2012-03-13" 
 ---
@@ -155,7 +155,6 @@ creation.
 
 ~~~ ruby 
 conn.insert(
-  1                                                                                                                                                 
   im,                                                                                                                                                         
   'SQL',                                                                                                                                                      
   primary_key,                                                                                                                                                

@@ -1,6 +1,6 @@
 --- 
 layout: post 
-title: "ActiveRecord: Getting attributes ready for saving"
+title: "ActiveRecord: Inserting a record Pt. 2"
 author: Robin Roestenburg 
 tags: rails activerecord arel mychain 
 chain: "Digging into Rails"
