@@ -1,8 +1,8 @@
 --- 
 layout: post 
-title: "ActiveRecord: Getting ready to select records"
+title: "Getting ready to select records"
 author: Robin Roestenburg 
-tags: rails activerecord mychain 
+tags: mychain 
 chain: "Digging into Rails"
 published_at: "2012-03-15" 
 ---
