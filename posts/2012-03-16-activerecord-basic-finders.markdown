@@ -1,8 +1,8 @@
 --- 
 layout: post 
-title: "ActiveRecord: Basic finders"
+title: "ActiveRecord: Basic finders Pt. 1"
 author: Robin Roestenburg 
-tags: rails activerecord mychain 
+tags: rails activerecord 
 chain: "Digging into Rails"
 published_at: "2012-03-16" 
 ---

@@ -2,7 +2,6 @@
 layout: post 
 title: "Getting ready to select records"
 author: Robin Roestenburg 
-tags: mychain 
 chain: "Digging into Rails"
 published_at: "2012-03-15" 
 ---
@@ -28,7 +27,7 @@ First, I have created the database tables which will store forest and trees:
 
 ~~~ sql
 CREATE TABLE forests (id serial, name varchar, PRIMARY KEY(id));
-CREATE TABLE trees (id serial, type varchar, forest_id integer, PRIMARY KEY(id));
+CREATE TABLE trees (id serial, species varchar, forest_id integer, PRIMARY KEY(id));
 ~~~
 
 While creating the tables I was looking for the syntax for creating a
@@ -73,13 +72,13 @@ end
 # tree.rb
 class Tree                                                                                                                                                                                                           
   include ActiveRecord::Model                                                                                                                                                                                        
-  attr_accessible :type
+  attr_accessible :species
   belongs_to :forest                                                                                                                                                                                                 
 end
 ~~~
 
 Simple enough :) One small note: being on Edge Rails I now have to add the
-`attr_accessible` call for the `type` attribute to be able to mass-assign it
+`attr_accessible` call for the `species` attribute to be able to mass-assign it
 when constructing a `Tree` object using `new`.
 
 ### The example
@@ -90,9 +89,9 @@ In the following series I will be working with the following example:
 forest = Forest.new(name: 'Rothrock')                                                                                                                                                                                
 
 # Create a couple of trees, for more types check: http://www.tree-pictures.com/tree_types.html                                                                                                                       
-forest.trees << Tree.new(type: 'Cucumbertree')                                                                                                                                                                                
-forest.trees << Tree.new(type: 'Red Pine')                                                                                                                                                                                    
-forest.trees << Tree.new(type: 'Black-Toothed Willow')                                                                                                                                                                        
+forest.trees << Tree.new(species: 'Cucumbertree')                                                                                                                                                                                
+forest.trees << Tree.new(species: 'Red Pine')                                                                                                                                                                                    
+forest.trees << Tree.new(species: 'Black-Toothed Willow')                                                                                                                                                                        
 
 forest.save
 
