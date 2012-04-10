@@ -3,7 +3,7 @@ require 'xml-sitemap'
 class TamingTheMindMonkey < Sinatra::Application
 
   get '/' do
-    @posts = Post.grouped_by_year_and_month
+    @posts = PostsPresenter.new(Post.all_posts).grouped_by_year_and_month
     haml :index
   end
 

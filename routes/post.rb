@@ -19,7 +19,7 @@ class TamingTheMindMonkey < Sinatra::Application
       year    = year.to_i
 
       @month  = Date.new(year, month)
-      @posts  = Post.find_by_month(year, month)
+      @posts  = PostsPresenter.new(Post.all_posts).grouped_by_year_and_month[year][month]
       @title  = "Taming the Mind Monkey - Archive #{year}-#{month}"
       haml :month
     rescue
@@ -29,7 +29,7 @@ class TamingTheMindMonkey < Sinatra::Application
 
   get %r{/([\d]+)} do |year|
     @year   = year.to_i
-    @months  = Post.find_by_year(@year)
+    @months  = PostsPresenter.new(Post.all_posts).grouped_by_year_and_month[@year]
     @title  = "Taming the Mind Monkey - Archive #{year}"
     haml :year
   end
