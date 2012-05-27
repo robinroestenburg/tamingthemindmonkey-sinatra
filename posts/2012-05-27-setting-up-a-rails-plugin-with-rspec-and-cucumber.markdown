@@ -172,9 +172,9 @@ when running RSpec. This path is configured in the `spec/spec_helper.rb` file:
 require File.expand_path("../../spec/dummy/config/environment", __FILE__)  
 ```
 
-One minor problem, we cannot run `rake spec`. This has to do with the absence
-of the RSpec task in the Rakefile, I'll look fix this later. In the meantime,
-we can run our tests using `rspec` (or `bundle exec rspec`).
+One minor problem, we cannot run `rake spec`. This has to do with the absence of
+the RSpec task in the Rakefile, I'll look at this in a later post. In the
+meantime, we can run our tests using `rspec` (or `bundle exec rspec`).
 
 Now, let's show that the setup worked by writing an initial first spec.
 
