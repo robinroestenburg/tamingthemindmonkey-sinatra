@@ -312,6 +312,6 @@ Feature: Bazinga
 ```
 
 That's it. You now have a Rails plugin using RSpec and Cucumber. Very good.
-Next blog post, I will take a look at configuring a Rails engine using RSpec
-and Cucumber. This is far simpler than the plugin configuration we just did, a
-lot of things work automatically :-)
+Next blog post, I will take a look at configuring RSpec and Cucumber for a
+special kind of Rails plugin, an engine. This is far simpler than the plugin
+configuration we just did, a lot of things work automatically :-)
