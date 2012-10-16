@@ -49,7 +49,7 @@ Foo
 
 real  1.66s
 user  2.08s
-sys 0.15s
+sys   0.15s
 
 # MRI 1.9.3-p194
 ~/time ruby -e "puts 'Foo'"
@@ -57,7 +57,7 @@ Foo
 
 real  0.05s
 user  0.02s
-sys 0.02s
+sys   0.02s
 ```
 
 This delay is very noticeable in my development workflow. If on the other hand
@@ -120,7 +120,7 @@ commands using Nailgun, it is pretty simple:
 2. Running a Ruby command against the Nailgun server:  
    `jruby --ng COMMAND`
 
-Pretty simple.
+As I said, simple.
 
 ### Automatically starting Nailgun server
 
@@ -138,8 +138,8 @@ That is kind of annoying, but you could automate starting the Nailgun server
 pretty easily I guess.
 
 I will spin up the Nailgun server by hand for now. As long as you do not 
-reinstall JRuby you won't have to restart the server. I did add an alias to my 
-zsh settings:
+reinstall JRuby you won't have to restart the server, so I can just leave it
+running all day. I did add an alias to my zsh settings:
 
 ``` bash
 alias jruby=jruby --ng
@@ -186,5 +186,5 @@ of runs, which is almost 10 times as fast.
 ### Conclusion
 
 JRuby combined with Nailgun is still slower than MRI (yes it is noticeable) but
-it is a lot less annoying right now. Cool stuff.. now wishing I would have
-looked at it earlier ;-(
+it is a lot less annoying right now. Cool stuff.. now wishing I had looked at 
+it earlier ;-(
