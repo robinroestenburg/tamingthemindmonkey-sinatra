@@ -119,7 +119,7 @@ require 'spec_helper'
     it "renders the form to create a post" do
       render
       within 'form' do |form|
-        rendered.should have_button("Save")
+        form.should have_button("Save")
       end
     end
   end
