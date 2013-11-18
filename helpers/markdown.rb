@@ -7,7 +7,7 @@ module Sinatra
     class HTMLwithPygments < Redcarpet::Render::HTML
       def block_code(code, language)
         language, show_line_numbers = language.split(',')
-        if show_line_numbers 
+        if show_line_numbers
           Pygments.highlight(code, :lexer => language, :options => { :linenos => 'inline' })
         else
           Pygments.highlight(code, :lexer => language)

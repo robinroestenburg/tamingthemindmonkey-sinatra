@@ -8,7 +8,7 @@ class Post
                 :filename
 
   POSTS_DIR = 'posts'
-  
+
   class << self
 
     def all_posts

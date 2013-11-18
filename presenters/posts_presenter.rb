@@ -1,6 +1,6 @@
 class PostsPresenter
 
-  def initialize(collection) 
+  def initialize(collection)
     @collection = collection
   end
 
